@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MiPrimerProyecto
 {
-    // Comentario Candela Perez
+    
     public partial class frmLogin : Form
     {
         // Intento Nº 2 CP
