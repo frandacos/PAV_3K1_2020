@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace MiPrimerProyecto
 {
+    // Comentario Candela Perez
     public partial class frmLogin : Form
     {
         string user = "admin";
