@@ -10,15 +10,12 @@ using System.Windows.Forms;
 
 namespace MiPrimerProyecto
 {
-    
+    //Comentario Tomas Eslava
     public partial class frmLogin : Form
     {
-<<<<<<< HEAD
         // Intento Nº 2 CP
-=======
-
         // Intento N2 FC
->>>>>>> e69d16c8908613ecf459f02c4e0d033bb8d57ed4
+
         string user = "admin";
         string pass = "1234";
         public frmLogin()
