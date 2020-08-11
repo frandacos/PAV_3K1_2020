@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MiPrimerProyecto
 {
-    //Comentario Tomas Eslava
+    // no abrazo
     public partial class frmLogin : Form
     {
         // Intento Nº 2 CP
