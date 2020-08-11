@@ -13,6 +13,7 @@ namespace MiPrimerProyecto
     // Comentario Candela Perez
     public partial class frmLogin : Form
     {
+
         // Intento N2 FC
         string user = "admin";
         string pass = "1234";
