@@ -49,16 +49,17 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="BusinessLayer\EstadoService.cs" />
-    <Compile Include="Cursos\frmABMCurso.cs">
+    <Compile Include="DataAccessLayer\DataManager.cs" />
+    <Compile Include="GUILayer\Cursos\frmABMCurso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\frmABMCurso.Designer.cs">
+    <Compile Include="GUILayer\Cursos\frmABMCurso.Designer.cs">
       <DependentUpon>frmABMCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cursos\frmCursos.cs">
+    <Compile Include="GUILayer\Cursos\frmCursos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cursos\frmCursos.Designer.cs">
+    <Compile Include="GUILayer\Cursos\frmCursos.Designer.cs">
       <DependentUpon>frmCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\EstadoDao.cs" />
@@ -87,10 +88,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cursos\frmABMCurso.resx">
+    <EmbeddedResource Include="GUILayer\Cursos\frmABMCurso.resx">
       <DependentUpon>frmABMCurso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Cursos\frmCursos.resx">
+    <EmbeddedResource Include="GUILayer\Cursos\frmCursos.resx">
       <DependentUpon>frmCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmConsultaBugs.resx">

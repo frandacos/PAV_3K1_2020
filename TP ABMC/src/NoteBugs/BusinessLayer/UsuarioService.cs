@@ -24,7 +24,7 @@ namespace BugTracker.BusinessLayer
         {
             var usr = oUsuarioDao.GetUser(usuario);
 
-            if (usr.Password != null && usr.Password.Equals(password))
+            if (usr != null)
             {
                 return usr;
             }
