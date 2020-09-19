@@ -16,10 +16,8 @@ namespace BugTracker.Entities
         public string Password { get; set; }
 
         public Perfil Perfil { get; set; }
+
         public Boolean Borrado { get; set; }
-
-
-
         public override string ToString()
         {
             return NombreUsuario;

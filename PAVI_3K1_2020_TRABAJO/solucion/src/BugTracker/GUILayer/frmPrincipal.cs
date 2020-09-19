@@ -1,4 +1,5 @@
 ﻿using BugTracker.Cursos;
+using BugTracker.GUILayer.Usuarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,6 +49,17 @@ namespace BugTracker.GUILayer
         private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCursos frmDetalle = new frmCursos();
+            frmDetalle.ShowDialog();
+        }
+
+        private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frmDetalle = new frmUsuarios();
             frmDetalle.ShowDialog();
         }
     }

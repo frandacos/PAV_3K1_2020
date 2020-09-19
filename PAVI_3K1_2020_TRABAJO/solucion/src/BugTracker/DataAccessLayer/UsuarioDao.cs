@@ -309,11 +309,10 @@ namespace BugTracker.DataAccessLayer
                 Email = row["email"].ToString(),
                 Estado = row["estado"].ToString(),
                 Password = row.Table.Columns.Contains("password") ? row["password"].ToString() : null,
-                Perfil = new Perfil()
-                {
+                Perfil = new Perfil() {
                     IdPerfil = Convert.ToInt32(row["id_perfil"].ToString()),
                     Nombre = row["perfil"].ToString(),
-                }
+                }                
             };
 
             return oUsuario;

@@ -29,7 +29,7 @@ namespace BugTracker.BusinessLayer
             //var usr = oUsuarioDao.GetUserConParametros(usuario);
 
 
-            if (usr!=null)
+            if (usr.Password != null && usr.Password.Equals(password))
             {
                 return usr;
             }
