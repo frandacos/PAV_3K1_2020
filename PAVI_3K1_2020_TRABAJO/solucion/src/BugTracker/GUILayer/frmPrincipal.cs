@@ -23,11 +23,10 @@ namespace BugTracker.GUILayer
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            //frmLogin login = new frmLogin();
-            //login.ShowDialog();
-            //lblUsuarioLogueado.Text = login.UsuarioLogueado;
-            frmUsuarioCurso frmUsCurso = new frmUsuarioCurso();
-            frmUsCurso.ShowDialog();
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+            lblUsuarioLogueado.Text = login.UsuarioLogueado;
+     
         }
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
