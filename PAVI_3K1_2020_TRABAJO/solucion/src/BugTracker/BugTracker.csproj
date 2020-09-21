@@ -51,14 +51,17 @@
     <Compile Include="BusinessLayer\CursoService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="BusinessLayer\EstadoService.cs" />
+    <Compile Include="BusinessLayer\UsuariosCursoService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\CategoriaDao.cs" />
     <Compile Include="DataAccessLayer\CursoDao.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
+    <Compile Include="DataAccessLayer\UsuariosCursoDao.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Curso.cs" />
+    <Compile Include="Entities\UsuariosCurso.cs" />
     <Compile Include="GUILayer\Cursos\frmABMCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +97,18 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.Designer.cs">
+      <DependentUpon>frmAMBUsuarioCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios_Curso\frmUsuarioCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Usuarios_Curso\frmUsuarioCurso.Designer.cs">
+      <DependentUpon>frmUsuarioCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Usuarios\frmABMUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.resx">
+      <DependentUpon>frmAMBUsuarioCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Usuarios_Curso\frmUsuarioCurso.resx">
+      <DependentUpon>frmUsuarioCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Usuarios\frmABMUsuario.resx">
       <DependentUpon>frmABMUsuario.cs</DependentUpon>

@@ -1,5 +1,6 @@
 ﻿using BugTracker.Cursos;
 using BugTracker.GUILayer.Usuarios;
+using BugTracker.GUILayer.Usuarios_Curso;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,11 @@ namespace BugTracker.GUILayer
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-            lblUsuarioLogueado.Text = login.UsuarioLogueado;
+            //frmLogin login = new frmLogin();
+            //login.ShowDialog();
+            //lblUsuarioLogueado.Text = login.UsuarioLogueado;
+            frmUsuarioCurso frmUsCurso = new frmUsuarioCurso();
+            frmUsCurso.ShowDialog();
         }
 
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -61,6 +64,12 @@ namespace BugTracker.GUILayer
         {
             frmUsuarios frmDetalle = new frmUsuarios();
             frmDetalle.ShowDialog();
+        }
+
+        private void usuariosPorCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsuarioCurso frmUsCurso = new frmUsuarioCurso();
+            frmUsCurso.ShowDialog();
         }
     }
     
