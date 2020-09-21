@@ -52,11 +52,11 @@ namespace BugTracker.GUILayer.Usuarios_Curso
 
                 case FormMode.update:
                     {
-                        this.Text = "Actualizar usuario y/o curso";
+                        this.Text = "Actualizar datos Usuario-Curso";
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
-                        cboCurso.Enabled = true;
-                        cboUsuario.Enabled = true;
+                        cboCurso.Enabled = false;
+                        cboUsuario.Enabled = false;
                         txtPuntuacion.Enabled = true;
                         txtObservaciones.Enabled = true;
                         dtpFechaInicio.Enabled = true;
@@ -142,8 +142,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                     {
                         if (ExisteUsuarioEnCurso() == false)
                         {
-                            if (ValidarCampos())
-                            {
+                            
                                 var oUsuarioCurso = new UsuariosCurso();
                                 oUsuarioCurso.Curso = new Curso();
                                 oUsuarioCurso.Curso.Id_curso = (int)cboCurso.SelectedValue;
@@ -152,7 +151,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                            
                                 oUsuarioCurso.Puntuacion = Convert.ToInt32(txtPuntuacion.Text.ToString());
                                 oUsuarioCurso.Observaciones = txtObservaciones.Text;
-                                oUsuarioCurso.Fecha_inicio = dtpFechaInicio.Value;
+                                oUsuarioCurso.Fecha_inicio =dtpFechaInicio.Value;
                                 oUsuarioCurso.Fecha_fin = dtpFecha_fin.Value;
 
                                 if (oUsuariosCursoService.CrearUsuarioCurso(oUsuarioCurso))
@@ -160,11 +159,11 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                                     MessageBox.Show("Usuario en curso insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
-                            }
+                            
                         }
                     
                         else
-                            MessageBox.Show("Nombre de usuario encontrado!. Ingrese un nombre diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Relacion usuario-curso encontrado!. Ingrese un nombre de usuario o curso diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     }
 
@@ -172,23 +171,24 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                     {
                         if (ValidarCampos())
                         {
+                           
                             oUsuarioCursoSelected.Usuario = new Usuario();
                             oUsuarioCursoSelected.Usuario.IdUsuario = (int)cboUsuario.SelectedValue;
                             oUsuarioCursoSelected.Usuario = new Usuario();
                             oUsuarioCursoSelected.Usuario.IdUsuario = (int)cboUsuario.SelectedValue;
                             oUsuarioCursoSelected.Puntuacion = Convert.ToInt32(txtPuntuacion.Text.ToString());
                             oUsuarioCursoSelected.Observaciones = txtObservaciones.Text;
-                            oUsuarioCursoSelected.Fecha_inicio = dtpFechaInicio.Value;
+                            oUsuarioCursoSelected.Fecha_inicio =dtpFechaInicio.Value;
                             oUsuarioCursoSelected.Fecha_fin = dtpFecha_fin.Value;
                             
 
                             if (oUsuariosCursoService.ActualizarUsuarioCurso(oUsuarioCursoSelected))
                             {
-                                MessageBox.Show("Usuario y/o curso actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Usuario-Curso actualizado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Dispose();
                             }
                             else
-                                MessageBox.Show("Error al actualizar el usuario y/o curso!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Error al actualizar el Usuario-Curso!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
 
                         break;
@@ -219,6 +219,11 @@ namespace BugTracker.GUILayer.Usuarios_Curso
             string curso = cboCurso.SelectedValue.ToString();
 
             return oUsuariosCursoService.ObtenerUsuariosCurso(curso,usuario) != null;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
         }
     }
 }

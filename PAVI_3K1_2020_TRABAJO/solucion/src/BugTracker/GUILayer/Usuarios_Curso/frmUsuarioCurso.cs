@@ -39,9 +39,9 @@ namespace BugTracker.GUILayer.Usuarios_Curso
         {
             cboCurso.Enabled = x;
             cboUsuario.Enabled = x;
-            btnEditar.Enabled = x;
-            btnNuevo.Enabled = x;
-            btnQuitar.Enabled = x;
+            btnEditar.Enabled = !x;
+            btnNuevo.Enabled = !x;
+            btnQuitar.Enabled = !x;
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -101,6 +101,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
             var filters = new Dictionary<string, object>();
             //usa filters para pasar los parámetros
             //usa condiciones para no usar parámetros en la consulta
+            habilitar(false);
 
             if (!chkTodos.Checked)
             {
@@ -174,6 +175,8 @@ namespace BugTracker.GUILayer.Usuarios_Curso
             var usCurso = (UsuariosCurso)dgvUsuarioCurso.CurrentRow.DataBoundItem;
             formulario.SeleccionarUsuarioCurso(frmAMBUsuarioCurso.FormMode.update, usCurso);
             formulario.ShowDialog();
+            
+
             btnConsultar_Click(sender, e);
         }
 

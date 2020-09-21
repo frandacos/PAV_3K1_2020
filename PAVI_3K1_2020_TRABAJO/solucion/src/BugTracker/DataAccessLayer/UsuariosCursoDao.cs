@@ -170,14 +170,13 @@ namespace BugTracker.DataAccessLayer
               
                 string str_sql = "INSERT INTO UsuariosCurso (id_usuario, id_curso, puntuacion, observaciones,fecha_inicio,fecha_fin, borrado)" +
                             " VALUES (" +
-                                 oUsuariosCurso.Usuario.IdUsuario + "," 
-                                + oUsuariosCurso.Curso.Id_curso + "," 
-                                 + oUsuariosCurso.Puntuacion +  "," +
-                            "'" + oUsuariosCurso.Observaciones+ "'" + "," +
-                                 oUsuariosCurso.Fecha_inicio + "," +
-                                 oUsuariosCurso.Fecha_fin + "," +
-                             "0)";
-
+                                 "'"+ oUsuariosCurso.Usuario.IdUsuario + "'," 
+                               + "'" + oUsuariosCurso.Curso.Id_curso + "'," 
+                               + "'" + oUsuariosCurso.Puntuacion +  "'," 
+                               + "'" + oUsuariosCurso.Observaciones+ "'" + "," 
+                               + "'" + oUsuariosCurso.Fecha_inicio.ToString("yyyy-MM-dd") + "',"
+                               + "'" + oUsuariosCurso.Fecha_fin.ToString("yyyy-MM-dd") + "', 0) ";
+                            
 
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
                 dm.EjecutarSQL(str_sql);
@@ -206,13 +205,13 @@ namespace BugTracker.DataAccessLayer
                 dm.Open();
                 dm.BeginTransaction();
 
+                
                 string str_sql = "UPDATE UsuariosCurso" +
-                                " SET id_usuario= " + oUsuariosCurso.Usuario.IdUsuario + "," +
-                                " id_curso=" + oUsuariosCurso.Curso.Id_curso + "," +
-                                " puntuacion=" + oUsuariosCurso.Puntuacion + "," +
-                                " observaciones= '" + oUsuariosCurso.Puntuacion + "'," +
-                                " fecha_inicio=" + oUsuariosCurso.Fecha_inicio + "," +
-                                " fecha_fin=" + oUsuariosCurso.Fecha_fin+
+                                " SET "+
+                                " puntuacion=" + "'" + oUsuariosCurso.Puntuacion + "'," +
+                                " observaciones= " + "'" + oUsuariosCurso.Observaciones + "'," +
+                                " fecha_inicio= " + "'" + oUsuariosCurso.Fecha_inicio.ToString("yyyy-MM-dd") + "'," +
+                                " fecha_fin= " + "'" + oUsuariosCurso.Fecha_fin.ToString("yyyy-MM-dd") + "'" +
                                 " WHERE id_usuario=" + oUsuariosCurso.Usuario.IdUsuario + " AND id_curso=" + oUsuariosCurso.Curso.Id_curso + " AND  borrado=0";
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
                 dm.EjecutarSQL(str_sql);

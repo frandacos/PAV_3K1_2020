@@ -75,7 +75,7 @@
             this.cboUsuario.Location = new System.Drawing.Point(75, 15);
             this.cboUsuario.Name = "cboUsuario";
             this.cboUsuario.Size = new System.Drawing.Size(210, 21);
-            this.cboUsuario.TabIndex = 37;
+            this.cboUsuario.TabIndex = 1;
             // 
             // cboCurso
             // 
@@ -84,23 +84,24 @@
             this.cboCurso.Location = new System.Drawing.Point(75, 59);
             this.cboCurso.Name = "cboCurso";
             this.cboCurso.Size = new System.Drawing.Size(210, 21);
-            this.cboCurso.TabIndex = 36;
+            this.cboCurso.TabIndex = 2;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(174, 275);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 23);
-            this.btnCancelar.TabIndex = 35;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(64, 275);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(78, 23);
-            this.btnAceptar.TabIndex = 34;
+            this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -111,7 +112,7 @@
             this.dtpFecha_fin.Location = new System.Drawing.Point(75, 235);
             this.dtpFecha_fin.Name = "dtpFecha_fin";
             this.dtpFecha_fin.Size = new System.Drawing.Size(99, 20);
-            this.dtpFecha_fin.TabIndex = 13;
+            this.dtpFecha_fin.TabIndex = 6;
             this.dtpFecha_fin.Value = new System.DateTime(2020, 9, 20, 0, 0, 0, 0);
             // 
             // dtpFechaInicio
@@ -120,7 +121,7 @@
             this.dtpFechaInicio.Location = new System.Drawing.Point(78, 200);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(99, 20);
-            this.dtpFechaInicio.TabIndex = 12;
+            this.dtpFechaInicio.TabIndex = 5;
             this.dtpFechaInicio.Value = new System.DateTime(2020, 9, 20, 0, 0, 0, 0);
             // 
             // lblFecha_Fin
@@ -147,7 +148,7 @@
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(185, 44);
-            this.txtObservaciones.TabIndex = 9;
+            this.txtObservaciones.TabIndex = 4;
             // 
             // lblObservaciones
             // 
@@ -172,25 +173,25 @@
             this.txtPuntuacion.Location = new System.Drawing.Point(75, 101);
             this.txtPuntuacion.Name = "txtPuntuacion";
             this.txtPuntuacion.Size = new System.Drawing.Size(43, 20);
-            this.txtPuntuacion.TabIndex = 6;
+            this.txtPuntuacion.TabIndex = 3;
             // 
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
             this.lblCurso.Location = new System.Drawing.Point(5, 59);
             this.lblCurso.Name = "lblCurso";
-            this.lblCurso.Size = new System.Drawing.Size(37, 13);
+            this.lblCurso.Size = new System.Drawing.Size(50, 13);
             this.lblCurso.TabIndex = 3;
-            this.lblCurso.Text = "Curso:";
+            this.lblCurso.Text = "Curso (*):";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Location = new System.Drawing.Point(5, 15);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(46, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(59, 13);
             this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "Usuario:";
+            this.lblUsuario.Text = "Usuario (*):";
             // 
             // frmAMBUsuarioCurso
             // 

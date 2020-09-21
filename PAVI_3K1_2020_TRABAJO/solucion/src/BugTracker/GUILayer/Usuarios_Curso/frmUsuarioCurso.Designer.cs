@@ -89,8 +89,10 @@
             this.dgvUsuarioCurso.AllowUserToDeleteRows = false;
             this.dgvUsuarioCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarioCurso.Location = new System.Drawing.Point(23, 143);
+            this.dgvUsuarioCurso.MultiSelect = false;
             this.dgvUsuarioCurso.Name = "dgvUsuarioCurso";
             this.dgvUsuarioCurso.ReadOnly = true;
+            this.dgvUsuarioCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarioCurso.Size = new System.Drawing.Size(369, 172);
             this.dgvUsuarioCurso.TabIndex = 6;
             // 
