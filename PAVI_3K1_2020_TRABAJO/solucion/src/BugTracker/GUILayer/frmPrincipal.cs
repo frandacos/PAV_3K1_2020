@@ -1,5 +1,6 @@
 ﻿using BugTracker.Cursos;
 using BugTracker.GUILayer.Usuarios;
+using BugTracker.GUILayer.Objetivos;
 using BugTracker.GUILayer.Categorias;
 using BugTracker.GUILayer.Actividades;
 using BugTracker.GUILayer.Usuarios_Curso;
@@ -88,6 +89,12 @@ namespace BugTracker.GUILayer
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void objetivosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmObjetivos frmDetalle = new frmObjetivos();
+            frmDetalle.ShowDialog();
         }
     }
     

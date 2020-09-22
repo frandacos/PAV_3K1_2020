@@ -50,6 +50,7 @@
     <Compile Include="BusinessLayer\ActividadService.cs" />
     <Compile Include="BusinessLayer\CategoriaService.cs" />
     <Compile Include="BusinessLayer\CursoService.cs" />
+    <Compile Include="BusinessLayer\ObjetivoService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="BusinessLayer\EstadoService.cs" />
     <Compile Include="BusinessLayer\UsuariosCursoService.cs" />
@@ -58,12 +59,14 @@
     <Compile Include="DataAccessLayer\CategoriaDao.cs" />
     <Compile Include="DataAccessLayer\CursoDao.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
+    <Compile Include="DataAccessLayer\ObjetivoDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="DataAccessLayer\UsuariosCursoDao.cs" />
     <Compile Include="Entities\Actividad.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Curso.cs" />
+    <Compile Include="Entities\Objetivo.cs" />
     <Compile Include="Entities\UsuariosCurso.cs" />
     <Compile Include="GUILayer\Actividades\frmABMActividad.cs">
       <SubType>Form</SubType>
@@ -124,6 +127,18 @@
     <Compile Include="GUILayer\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Objetivos\frmABMObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Objetivos\frmABMObjetivos.designer.cs">
+      <DependentUpon>frmABMObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Objetivos\frmObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Objetivos\frmObjetivos.designer.cs">
+      <DependentUpon>frmObjetivos.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Objetivos\frmABMObjetivos.resx">
+      <DependentUpon>frmABMObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Objetivos\frmObjetivos.resx">
+      <DependentUpon>frmObjetivos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.resx">
       <DependentUpon>frmAMBUsuarioCurso.cs</DependentUpon>
