@@ -17,6 +17,8 @@ public class DataManager
         // var string_conexion = ConfigurationManager.ConnectionStrings[dataBaseName].ConnectionString;
         //dbConnection.ConnectionString = @"Data Source=sql5080.site4now.net;Initial Catalog=DB_A674C1_BugsTrackerFull;Persist Security Info=True;User ID=DB_A674C1_BugsTrackerFull_admin;Password= Ardacos73";
         dbConnection.ConnectionString = @"Data Source=sql5080.site4now.net;Initial Catalog=DB_A674C1_BugsTrackerFull;User ID=DB_A674C1_BugsTrackerFull_admin;Password=Ardacos73;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        //dbConnection.ConnectionString = @"Data Source=DESKTOP-J7D7ML8\SQLEXPRESS;Initial Catalog=PUEBA;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+
     }
 
     public void BeginTransaction()

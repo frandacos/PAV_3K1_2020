@@ -47,21 +47,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\ActividadService.cs" />
     <Compile Include="BusinessLayer\CategoriaService.cs" />
     <Compile Include="BusinessLayer\CursoService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="BusinessLayer\EstadoService.cs" />
     <Compile Include="BusinessLayer\UsuariosCursoService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
+    <Compile Include="DataAccessLayer\ActividadDao.cs" />
     <Compile Include="DataAccessLayer\CategoriaDao.cs" />
     <Compile Include="DataAccessLayer\CursoDao.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="DataAccessLayer\UsuariosCursoDao.cs" />
+    <Compile Include="Entities\Actividad.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Curso.cs" />
     <Compile Include="Entities\UsuariosCurso.cs" />
+    <Compile Include="GUILayer\Actividades\frmABMActividad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Actividades\frmABMActividad.Designer.cs">
+      <DependentUpon>frmABMActividad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Actividades\frmActividades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Actividades\frmActividades.Designer.cs">
+      <DependentUpon>frmActividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Categorias\frmABMCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +150,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\Actividades\frmABMActividad.resx">
+      <DependentUpon>frmABMActividad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Actividades\frmActividades.resx">
+      <DependentUpon>frmActividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Categorias\frmABMCategoria.resx">
       <DependentUpon>frmABMCategoria.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,9 +251,7 @@
   <ItemGroup>
     <None Include="Resources\user_log.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GUILayer\Actividades\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

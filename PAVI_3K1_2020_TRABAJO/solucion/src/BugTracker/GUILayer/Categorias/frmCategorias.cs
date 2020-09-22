@@ -74,7 +74,7 @@ namespace BugTracker.GUILayer.Categorias
             frmABMCategoria formulario = new frmABMCategoria();
             formulario.ShowDialog();
             btnConsultar_Click_1(sender, e);
-            //habilitar(true);
+            //habilitar(false);
             //frmCategorias_Load_1(sender, e);
         }
 
@@ -97,7 +97,7 @@ namespace BugTracker.GUILayer.Categorias
             formulario.SeleccionarCategoria(frmABMCategoria.FormMode.update, categoria);
             formulario.ShowDialog();
             btnConsultar_Click_1(sender, e);
-            //this.habilitar(true);
+            //this.habilitar(false);
             //frmCursos_Load_1(sender, e);
         }
 
