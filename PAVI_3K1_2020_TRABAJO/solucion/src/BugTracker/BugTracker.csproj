@@ -62,6 +62,18 @@
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Curso.cs" />
     <Compile Include="Entities\UsuariosCurso.cs" />
+    <Compile Include="GUILayer\Categorias\frmABMCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Categorias\frmABMCategoria.Designer.cs">
+      <DependentUpon>frmABMCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Categorias\frmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Categorias\frmCategorias.Designer.cs">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Cursos\frmABMCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\Categorias\frmABMCategoria.resx">
+      <DependentUpon>frmABMCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Categorias\frmCategorias.resx">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Cursos\frmABMCurso.resx">
       <DependentUpon>frmABMCurso.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,7 +230,9 @@
   <ItemGroup>
     <None Include="Resources\user_log.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GUILayer\Actividades\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

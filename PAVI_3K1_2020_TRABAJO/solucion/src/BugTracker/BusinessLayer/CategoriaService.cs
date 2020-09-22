@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BugTracker.BusinessLayer
 {
-    class CategoriaService
+    public class CategoriaService
     {
         private CategoriaDao oCategoriaDao;
         public CategoriaService()
@@ -18,6 +18,35 @@ namespace BugTracker.BusinessLayer
         public IList<Categoria> ObtenerTodos()
         {
             return oCategoriaDao.GetAll();
+        }
+
+        internal IList<Categoria> ConsultarConFiltrosSinParametros(String condiciones)
+        {
+            return oCategoriaDao.GetByFiltersSinParametros(condiciones);
+        }
+
+        internal object ObtenerCategoria(string categoria)
+        {
+            //SIN PARAMETROS
+            return oCategoriaDao.GetUserConParametros(categoria);
+
+            //CON PARAMETROS
+            // return oUsuarioDao.GetUserConParametros(usuario);
+        }
+
+        internal bool CrearCategoria(Categoria oCategoria)
+        {
+            return oCategoriaDao.Create(oCategoria);
+        }
+
+        internal bool ActualizarCategoria(Categoria oCategoriaSelected)
+        {
+            return oCategoriaDao.Update(oCategoriaSelected);
+        }
+
+        internal bool BorrarCategoria(Categoria oCategoriaSelected)
+        {
+            return oCategoriaDao.Delete(oCategoriaSelected);
         }
     }
 }

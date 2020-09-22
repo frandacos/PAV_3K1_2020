@@ -17,12 +17,13 @@ namespace BugTracker.Entities
         public string Nombre { get => nombre; set => nombre = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public Boolean Borrado { get => borrado; set => borrado = value; }
-        
+
         public override string ToString()
         {
-        return Nombre;
+            return Nombre;
         }
     }
 
-    
+
 }
+

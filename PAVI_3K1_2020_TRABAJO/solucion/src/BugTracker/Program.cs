@@ -1,5 +1,6 @@
 ﻿using BugTracker.Cursos;
 using BugTracker.GUILayer;
+using BugTracker.GUILayer.Categorias;
 using System;
 using System.Collections.Generic;
 using System.Linq;
