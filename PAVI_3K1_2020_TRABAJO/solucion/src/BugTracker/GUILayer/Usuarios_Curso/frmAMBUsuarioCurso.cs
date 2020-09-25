@@ -172,10 +172,10 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                         if (ValidarCampos())
                         {
                            
-                            oUsuarioCursoSelected.Usuario = new Usuario();
+                            //oUsuarioCursoSelected.Usuario = new Usuario();
                             oUsuarioCursoSelected.Usuario.IdUsuario = (int)cboUsuario.SelectedValue;
-                            oUsuarioCursoSelected.Usuario = new Usuario();
-                            oUsuarioCursoSelected.Usuario.IdUsuario = (int)cboUsuario.SelectedValue;
+                            //oUsuarioCursoSelected.Usuario = new Usuario();
+                            oUsuarioCurso.Curso.Id_curso = (int)cboCurso.SelectedValue;
                             oUsuarioCursoSelected.Puntuacion = Convert.ToInt32(txtPuntuacion.Text.ToString());
                             oUsuarioCursoSelected.Observaciones = txtObservaciones.Text;
                             oUsuarioCursoSelected.Fecha_inicio =dtpFechaInicio.Value;
