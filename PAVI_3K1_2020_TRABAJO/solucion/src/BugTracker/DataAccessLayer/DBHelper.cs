@@ -14,7 +14,7 @@ namespace BugTracker
         {
             //string_conexion = @"Data Source = sql5080.site4now.net; Initial Catalog = DB_A674C1_BugsTrackerFull; Persist Security Info = True; User ID = DB_A674C1_BugsTrackerFull_admin; Password = Ardacos73";
             //string_conexion = @"Data Source=sql5080.site4now.net;Initial Catalog=DB_A674C1_PAV3K1;User ID=DB_A674C1_PAV3K1_admin;Password=Ardacos73;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string_conexion = @"Data Source=sql5080.site4now.net;Initial Catalog=DB_A674C1_FRANDACOS;User ID=DB_A674C1_FRANDACOS_admin;Password=Ardacos73;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string_conexion = @"Data Source=sql5080.site4now.net;Initial Catalog=DB_A674C1_FRANCO;User ID=DB_A674C1_FRANCO_admin;Password=Ardacos73;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         }
 
