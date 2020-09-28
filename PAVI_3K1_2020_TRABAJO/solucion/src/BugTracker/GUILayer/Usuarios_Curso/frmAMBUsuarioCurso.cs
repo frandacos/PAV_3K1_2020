@@ -143,7 +143,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                     {
                         if (ExisteUsuarioEnCurso() == false)
                         {
-                            
+                                
                                 var oUsuarioCurso = new UsuariosCurso();
                                 oUsuarioCurso.Curso = new Curso();
                                 oUsuarioCurso.Curso.Id_curso = (int)cboCurso.SelectedValue;
@@ -155,11 +155,12 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                                 oUsuarioCurso.Fecha_inicio =dtpFechaInicio.Value;
                                 oUsuarioCurso.Fecha_fin = dtpFecha_fin.Value;
 
+
                                 if (oUsuariosCursoService.CrearUsuarioCurso(oUsuarioCurso))
                                 {
-                                    frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance();
-                                    avance.ShowDialog();
                                     MessageBox.Show("Usuario en curso insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance(4,1);
+                                    avance.ShowDialog();
                                     this.Close();
                                 }
                             

@@ -12,10 +12,19 @@ namespace BugTracker.BusinessLayer
     {
         private UsuarioCursoAvanceDao oUsuarioCursoAvanceDao;
 
-        //internal IList<UsuarioCursoAvance> ConsultarConFiltrosSinParametros(String condiciones)
-        //{
-        //    return oUsuarioCursoAvanceDao.GetByFiltersSinParametros(condiciones);
-        //}
+        public UsuarioCursoAvanceService()
+        {
+            oUsuarioCursoAvanceDao = new UsuarioCursoAvanceDao();
+        }
+
+        internal object ObtenerUsuariosCurso(int idCurso, int idUsuario)
+        {
+            //SIN PARAMETROS
+            return oUsuarioCursoAvanceDao.GetUserConParametros(idCurso, idUsuario);
+
+            //CON PARAMETROS
+            // return oUsuarioDao.GetUserConParametros(usuario);
+        }
     }
 }
 

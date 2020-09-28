@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using BugTracker.GUILayer.Usuarios_Curso;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,19 +12,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BugTracker.GUILayer.UsuarioCursoAvance
-{
+{ 
     public partial class frmUsuarioCursoAvance : Form
     {
         private CursoService oCursoService;
         private UsuarioService oUsuarioService;
         private ActividadService oActividadService;
         private UsuarioCursoAvanceService oUsuarioCursoAvanceService;
+        public int idCurso;
+        public int idUsuario;
 
 
         public frmUsuarioCursoAvance()
         {
             InitializeComponent();
             InitializeDataGridView();
+            oUsuarioCursoAvanceService = new UsuarioCursoAvanceService();
+            oCursoService = new CursoService();
+            oUsuarioService = new UsuarioService();
+            oActividadService = new ActividadService();
+        }
+
+        public frmUsuarioCursoAvance(int idCurso, int idUsuario)
+        {
+            InitializeComponent();
+            InitializeDataGridView();
+            this.idCurso = idCurso;
+            this.idUsuario = idUsuario;
             oUsuarioCursoAvanceService = new UsuarioCursoAvanceService();
             oCursoService = new CursoService();
             oUsuarioService = new UsuarioService();
@@ -85,10 +100,12 @@ namespace BugTracker.GUILayer.UsuarioCursoAvance
 
         private void frmUsuarioCursoAvance_Load(object sender, EventArgs e)
         {
-            //String condiciones = "";
-            //var filters = new Dictionary<string, object>();
-            //var oUsuarioCurso = new UsuariosCurso();
-            //dgvUsuarioCursoAvance.DataSource = oUsuarioCursoAvanceService.ConsultarConFiltrosSinParametros(condiciones);
+            dgvUsuarioCursoAvance.DataSource = oUsuarioCursoAvanceService.ObtenerUsuariosCurso(idCurso,idUsuario);
+        }
+
+        private void pgreBar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

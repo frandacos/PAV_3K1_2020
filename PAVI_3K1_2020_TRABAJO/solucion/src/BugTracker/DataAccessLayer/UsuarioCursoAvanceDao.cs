@@ -15,24 +15,45 @@ namespace BugTracker.DataAccessLayer
 {
     class UsuarioCursoAvanceDao
     {
-        //public IList<UsuarioCursoAvance> GetByFiltersSinParametros(String condiciones)
-        //{
+        public UsuarioCursoAvance GetUserConParametros(int idCurso, int idUsuario)
+        {
+            //Construimos la consulta sql para buscar el usuario en la base de datos.
 
-        //    List<UsuarioCursoAvance> lst = new List<UsuarioCursoAvance>();
-        //    String strSql = string.Concat("  SELECT 
-        //                                  "   FROM UsuariosCurso UC",
-        //                                  "   INNER JOIN Usuarios U ON (UC.id_usuario = U.id_usuario) INNER JOIN Cursos C ON(UC.id_curso = C.id_curso) WHERE UC.borrado=0 ");
-        //    //agrego condiciones
-        //    strSql += condiciones;
-        //    DataManager dm = new DataManager();
-        //    dm.Open();
-        //    var resultado = dm.ConsultaSQL(strSql);
+            String strSql = string.Concat(" SELECT A.nombre, ",
+                                          "        A.descripcion ",
+                                          "   FROM UsuariosCursoAvance UCA",
+                                          "   INNER JOIN Actividades A ON (UCA.id_actividad = A.id_actividad) WHERE (UCA.id_usuario = @idUsuario) AND (UCA.id_curso = @idCurso) AND (UCA.borrado = 0) ");
 
-        //    foreach (DataRow row in resultado.Rows)
-        //        lst.Add(ObjectMapping(row));
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("idCurso", idCurso);
+            parametros.Add("idUsuario", idUsuario);
 
-        //    return lst;
-        //}
+            //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
+            //var resultado = DBHelper.GetDBHelper().ConsultaSQLConParametros(strSql, parametros);
+            DataManager dm = new DataManager();
+            dm.Open();
+            var resultado = dm.ConsultaSQLConParametros(strSql, parametros);
 
+            // Validamos que el resultado tenga al menos una fila.
+            if (resultado.Rows.Count > 0)
+            {
+                return ObjectMapping(resultado.Rows[0]);
+            }
+
+            return null;
+        }
+
+        private UsuarioCursoAvance ObjectMapping(DataRow row)
+        {
+            UsuarioCursoAvance oUsuarioCursoAvance = new UsuarioCursoAvance
+            {
+                Actividad = new Actividad()
+                {
+                    Nombre = row["nombre"].ToString(),
+                    Descripcion = row["descripcion"].ToString()
+                },
+            };
+            return oUsuarioCursoAvance;
+        }
     }
 }

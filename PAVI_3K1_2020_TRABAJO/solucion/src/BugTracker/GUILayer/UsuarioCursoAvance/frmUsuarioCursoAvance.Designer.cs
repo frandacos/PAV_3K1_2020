@@ -102,6 +102,7 @@
             this.pgreBar.Name = "pgreBar";
             this.pgreBar.Size = new System.Drawing.Size(676, 61);
             this.pgreBar.TabIndex = 9;
+            this.pgreBar.Click += new System.EventHandler(this.pgreBar_Click);
             // 
             // dgvUsuarioCursoAvance
             // 
