@@ -1,4 +1,5 @@
 ﻿using BugTracker.BusinessLayer;
+using BugTracker.GUILayer.UsuarioCursoAvance;
 using BugTracker.Entities;
 using System;
 using System.Collections.Generic;
@@ -156,6 +157,8 @@ namespace BugTracker.GUILayer.Usuarios_Curso
 
                                 if (oUsuariosCursoService.CrearUsuarioCurso(oUsuarioCurso))
                                 {
+                                    frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance();
+                                    avance.ShowDialog();
                                     MessageBox.Show("Usuario en curso insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     this.Close();
                                 }
@@ -221,6 +224,11 @@ namespace BugTracker.GUILayer.Usuarios_Curso
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close(); 
+        }
+
+        private void cboUsuario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

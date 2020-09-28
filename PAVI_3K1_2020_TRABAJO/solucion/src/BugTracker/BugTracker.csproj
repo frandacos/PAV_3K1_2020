@@ -53,6 +53,7 @@
     <Compile Include="BusinessLayer\ObjetivoService.cs" />
     <Compile Include="BusinessLayer\PerfilService.cs" />
     <Compile Include="BusinessLayer\EstadoService.cs" />
+    <Compile Include="BusinessLayer\UsuarioCursoAvanceService.cs" />
     <Compile Include="BusinessLayer\UsuariosCursoService.cs" />
     <Compile Include="BusinessLayer\UsuarioService.cs" />
     <Compile Include="DataAccessLayer\ActividadDao.cs" />
@@ -61,12 +62,14 @@
     <Compile Include="DataAccessLayer\DataManager.cs" />
     <Compile Include="DataAccessLayer\ObjetivoDao.cs" />
     <Compile Include="DataAccessLayer\PerfilDao.cs" />
+    <Compile Include="DataAccessLayer\UsuarioCursoAvanceDao.cs" />
     <Compile Include="DataAccessLayer\UsuarioDao.cs" />
     <Compile Include="DataAccessLayer\UsuariosCursoDao.cs" />
     <Compile Include="Entities\Actividad.cs" />
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Curso.cs" />
     <Compile Include="Entities\Objetivo.cs" />
+    <Compile Include="Entities\UsuarioCursoAvance.cs" />
     <Compile Include="Entities\UsuariosCurso.cs" />
     <Compile Include="GUILayer\Actividades\frmABMActividad.cs">
       <SubType>Form</SubType>
@@ -139,6 +142,12 @@
     <Compile Include="GUILayer\Objetivos\frmObjetivos.designer.cs">
       <DependentUpon>frmObjetivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\UsuarioCursoAvance\frmUsuarioCursoAvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\UsuarioCursoAvance\frmUsuarioCursoAvance.Designer.cs">
+      <DependentUpon>frmUsuarioCursoAvance.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Objetivos\frmObjetivos.resx">
       <DependentUpon>frmObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\UsuarioCursoAvance\frmUsuarioCursoAvance.resx">
+      <DependentUpon>frmUsuarioCursoAvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.resx">
       <DependentUpon>frmAMBUsuarioCurso.cs</DependentUpon>

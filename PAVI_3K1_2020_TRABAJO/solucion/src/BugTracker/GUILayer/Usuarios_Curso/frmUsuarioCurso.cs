@@ -201,5 +201,10 @@ namespace BugTracker.GUILayer.Usuarios_Curso
         {
 
         }
+
+        private void dgvUsuarioCurso_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

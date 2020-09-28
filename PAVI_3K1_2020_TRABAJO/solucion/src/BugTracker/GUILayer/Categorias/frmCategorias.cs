@@ -136,6 +136,11 @@ namespace BugTracker.GUILayer.Categorias
         {
 
         }
+
+        private void dgvCategorias_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 

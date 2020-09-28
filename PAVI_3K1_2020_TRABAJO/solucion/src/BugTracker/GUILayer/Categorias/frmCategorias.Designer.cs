@@ -118,6 +118,7 @@
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategorias.Size = new System.Drawing.Size(814, 398);
             this.dgvCategorias.TabIndex = 8;
+            this.dgvCategorias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellContentClick_1);
             // 
             // chkTodos
             // 
