@@ -96,6 +96,12 @@ namespace BugTracker.GUILayer
             frmObjetivos frmDetalle = new frmObjetivos();
             frmDetalle.ShowDialog();
         }
+
+        private void consultarProgresoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarProgreso frmDetalle = new frmConsultarProgreso();
+            frmDetalle.ShowDialog();
+        }
     }
     
 }
