@@ -145,10 +145,10 @@
     <Compile Include="GUILayer\Objetivos\frmObjetivos.designer.cs">
       <DependentUpon>frmObjetivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUILayer\UsuarioCursoAvance\frmUsuarioCursoAvance.cs">
+    <Compile Include="GUILayer\Usuario_Curso_Avance\frmUsuarioCursoAvance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUILayer\UsuarioCursoAvance\frmUsuarioCursoAvance.Designer.cs">
+    <Compile Include="GUILayer\Usuario_Curso_Avance\frmUsuarioCursoAvance.Designer.cs">
       <DependentUpon>frmUsuarioCursoAvance.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.cs">
@@ -213,7 +213,7 @@
     <EmbeddedResource Include="GUILayer\Objetivos\frmObjetivos.resx">
       <DependentUpon>frmObjetivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUILayer\UsuarioCursoAvance\frmUsuarioCursoAvance.resx">
+    <EmbeddedResource Include="GUILayer\Usuario_Curso_Avance\frmUsuarioCursoAvance.resx">
       <DependentUpon>frmUsuarioCursoAvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Usuarios_Curso\frmAMBUsuarioCurso.resx">

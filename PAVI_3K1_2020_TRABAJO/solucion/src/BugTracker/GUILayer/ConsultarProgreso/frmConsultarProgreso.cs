@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BugTracker.BusinessLayer;
 using BugTracker.Entities;
-using BugTracker.GUILayer.UsuarioCursoAvance;
+using BugTracker.GUILayer.Usuario_Curso_Avance;
 
 namespace BugTracker.GUILayer
 {
@@ -22,6 +22,10 @@ namespace BugTracker.GUILayer
         private Label lblUsuarios;
         private Label lblCurso;
         private Button btnConsultar;
+        private UsuariosCursoService oUsuarioCursoService;
+
+
+
 
 
         public frmConsultarProgreso()
@@ -29,6 +33,7 @@ namespace BugTracker.GUILayer
             InitializeComponent();
             oCursoService = new CursoService();
             oUsuarioService = new UsuarioService();
+            oUsuarioCursoService = new UsuariosCursoService();
         }
 
         private void frmConsultarActividades_Load_1(object sender, EventArgs e)
@@ -56,10 +61,25 @@ namespace BugTracker.GUILayer
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            frmUsuarioCursoAvance frmDetalle = new frmUsuarioCursoAvance();
-            frmDetalle.ShowDialog();
-        }
+           
+            if (ExisteUsuarioEnCurso())
+            {   
+                frmUsuarioCursoAvance frmDetalle = new frmUsuarioCursoAvance((int)cboCursos.SelectedValue, (int)cboUsuarios.SelectedValue);
+            
+                frmDetalle.ShowDialog();
 
+            }
+            else
+                MessageBox.Show("Relacion usuario-curso no encontrado!. Ingrese un nombre de usuario o curso diferente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+        private bool ExisteUsuarioEnCurso()
+        {
+            string usuario = cboUsuarios.SelectedValue.ToString();
+            string curso = cboCursos.SelectedValue.ToString();
+
+            return oUsuarioCursoService.ObtenerUsuariosCurso(curso, usuario) != null;
+        }
         private void InitializeComponent()
         {
             this.cboUsuarios = new System.Windows.Forms.ComboBox();
@@ -71,6 +91,7 @@ namespace BugTracker.GUILayer
             // 
             // cboUsuarios
             // 
+            this.cboUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsuarios.FormattingEnabled = true;
             this.cboUsuarios.Location = new System.Drawing.Point(110, 54);
             this.cboUsuarios.Name = "cboUsuarios";
@@ -79,6 +100,7 @@ namespace BugTracker.GUILayer
             // 
             // cboCursos
             // 
+            this.cboCursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCursos.FormattingEnabled = true;
             this.cboCursos.Location = new System.Drawing.Point(110, 102);
             this.cboCursos.Name = "cboCursos";

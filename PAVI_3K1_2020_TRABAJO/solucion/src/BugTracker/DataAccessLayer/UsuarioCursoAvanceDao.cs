@@ -43,17 +43,64 @@ namespace BugTracker.DataAccessLayer
             return null;
         }
 
+        public IList<UsuarioCursoAvance> GetByFiltersSinParametros(String condiciones)
+        {
+            List<UsuarioCursoAvance> lst = new List<UsuarioCursoAvance>();
+
+            String strSql = "SELECT UCA.id_usuario, " +
+                " U.usuario as Nombre_usuario, "+
+                " UCA.id_curso," +
+                " C.nombre as Nombre_curso," +
+                " UCA.id_actividad," +
+                " A.nombre as Nombre_actividad," +
+                " A.descripcion, "+
+                " UCA.fin," +
+                " UCA.porc_avance," +
+                " UCA.borrado" +
+                " FROM UsuariosCursoAvance UCA INNER JOIN Usuarios U ON (UCA.id_usuario=U.id_usuario) " +
+                " INNER JOIN Cursos C ON (UCA.id_curso = C.id_curso)" +
+                " INNER JOIN Actividades A ON (UCA.id_actividad = A.id_actividad)" +
+                " WHERE UCA.borrado=0";
+
+
+
+            //agrego condiciones
+            strSql += condiciones;
+            DataManager dm = new DataManager();
+            dm.Open();
+            var resultado = dm.ConsultaSQL(strSql);
+
+            foreach (DataRow row in resultado.Rows)
+                lst.Add(ObjectMapping(row));
+
+            return lst;
+        }
+
         private UsuarioCursoAvance ObjectMapping(DataRow row)
         {
             UsuarioCursoAvance oUsuarioCursoAvance = new UsuarioCursoAvance
             {
+                Usuario = new Usuario()
+                {
+                    IdUsuario = Convert.ToInt32(row["id_usuario"].ToString()),
+                    NombreUsuario = row["Nombre_usuario"].ToString()
+                },
+                Curso = new Curso()
+                {
+                    Id_curso = Convert.ToInt32(row["id_curso"].ToString()),
+                    Nombre = row["Nombre_curso"].ToString()
+                },
+
                 Actividad = new Actividad()
                 {
-                    Nombre = row["nombre"].ToString(),
+                    Id_actividad = Convert.ToInt32(row["id_actividad"].ToString()),
+                    Nombre = row["Nombre_actividad"].ToString(),
                     Descripcion = row["descripcion"].ToString()
                 },
+                Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
             return oUsuarioCursoAvance;
         }
     }
+
 }

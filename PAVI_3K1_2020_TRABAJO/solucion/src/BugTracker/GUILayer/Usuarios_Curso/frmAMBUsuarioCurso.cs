@@ -1,5 +1,5 @@
 ﻿using BugTracker.BusinessLayer;
-using BugTracker.GUILayer.UsuarioCursoAvance;
+using BugTracker.GUILayer.Usuario_Curso_Avance;
 using BugTracker.Entities;
 using System;
 using System.Collections.Generic;
@@ -21,7 +21,9 @@ namespace BugTracker.GUILayer.Usuarios_Curso
         
         private UsuariosCurso oUsuarioCursoSelected;
         private CursoService oCursoService;
+        
         private UsuarioService oUsuarioService;
+        
 
         public frmAMBUsuarioCurso()
         {
@@ -48,6 +50,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                 case FormMode.insert:
                     {
                         this.Text = "Nuevo Usuario en curso";
+                        dtpFecha_fin.Enabled = false;
                         break;
                     }
 
@@ -146,22 +149,22 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                                 
                                 var oUsuarioCurso = new UsuariosCurso();
                                 oUsuarioCurso.Curso = new Curso();
-                                oUsuarioCurso.Curso.Id_curso = (int)cboCurso.SelectedValue;
+                                oUsuarioCurso.Curso.Id_curso = (int)cboCurso.SelectedValue ;
                                 oUsuarioCurso.Usuario = new Usuario();
                                 oUsuarioCurso.Usuario.IdUsuario = (int)cboUsuario.SelectedValue;
                            
                                 oUsuarioCurso.Puntuacion = Convert.ToInt32(txtPuntuacion.Text.ToString());
                                 oUsuarioCurso.Observaciones = txtObservaciones.Text;
                                 oUsuarioCurso.Fecha_inicio =dtpFechaInicio.Value;
-                                oUsuarioCurso.Fecha_fin = dtpFecha_fin.Value;
-
-
+                                                                
                                 if (oUsuariosCursoService.CrearUsuarioCurso(oUsuarioCurso))
                                 {
                                     MessageBox.Show("Usuario en curso insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance(4,1);
+                                                                   
+                                    frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance((int)cboCurso.SelectedValue, (int)cboUsuario.SelectedValue);
                                     avance.ShowDialog();
                                     this.Close();
+                                    
                                 }
                             
                         }

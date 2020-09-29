@@ -11,14 +11,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BugTracker.GUILayer.UsuarioCursoAvance
+namespace BugTracker.GUILayer.Usuario_Curso_Avance
 { 
     public partial class frmUsuarioCursoAvance : Form
     {
-        private CursoService oCursoService;
-        private UsuarioService oUsuarioService;
-        private ActividadService oActividadService;
+       
         private UsuarioCursoAvanceService oUsuarioCursoAvanceService;
+        private UsuarioCursoAvance oUsuarioCursoAvance;
         public int idCurso;
         public int idUsuario;
 
@@ -28,9 +27,8 @@ namespace BugTracker.GUILayer.UsuarioCursoAvance
             InitializeComponent();
             InitializeDataGridView();
             oUsuarioCursoAvanceService = new UsuarioCursoAvanceService();
-            oCursoService = new CursoService();
-            oUsuarioService = new UsuarioService();
-            oActividadService = new ActividadService();
+            oUsuarioCursoAvance = new UsuarioCursoAvance();
+            
         }
 
         public frmUsuarioCursoAvance(int idCurso, int idUsuario)
@@ -40,9 +38,7 @@ namespace BugTracker.GUILayer.UsuarioCursoAvance
             this.idCurso = idCurso;
             this.idUsuario = idUsuario;
             oUsuarioCursoAvanceService = new UsuarioCursoAvanceService();
-            oCursoService = new CursoService();
-            oUsuarioService = new UsuarioService();
-            oActividadService = new ActividadService();
+            
         }
 
         private void InitializeDataGridView()
@@ -62,8 +58,8 @@ namespace BugTracker.GUILayer.UsuarioCursoAvance
             dgvUsuarioCursoAvance.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
-            dgvUsuarioCursoAvance.Columns[0].Name = "Actividades";
-            dgvUsuarioCursoAvance.Columns[0].DataPropertyName = "Actividades";
+            dgvUsuarioCursoAvance.Columns[0].Name = "Actividad";
+            dgvUsuarioCursoAvance.Columns[0].DataPropertyName = "Actividad";
             // Definimos el ancho de la columna.
 
             dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
@@ -100,11 +96,45 @@ namespace BugTracker.GUILayer.UsuarioCursoAvance
 
         private void frmUsuarioCursoAvance_Load(object sender, EventArgs e)
         {
-            dgvUsuarioCursoAvance.DataSource = oUsuarioCursoAvanceService.ObtenerUsuariosCurso(idCurso,idUsuario);
+            btnFinalizar.Enabled = false;
+            btnNuevo.Enabled = true;
+            String condiciones = "";
+            condiciones += " AND UCA.id_curso=" + idCurso;
+            condiciones += " AND UCA.id_usuario=" + idUsuario;
+
+            dgvUsuarioCursoAvance.DataSource = oUsuarioCursoAvanceService.ConsultarConFiltrosSinParametros(condiciones);
+
+            
         }
 
         private void pgreBar_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            var actividad = (UsuarioCursoAvance)dgvUsuarioCursoAvance.CurrentRow.DataBoundItem;
+            btnNuevo.Enabled = false;
+            btnFinalizar.Enabled = true;
+            btnFinalizar.Focus();
+            //dgvUsuarioCursoAvance.CurrentRow.DefaultCellStyle.BackColor = Color.Aquamarine;
+            //oUsuarioCursoAvance.Fin = DateTime.Today;
+
+            //oUsuarioCursoAvanceService.ActualizarUsuarioCursoAvance(oUsuarioCursoAvance);
+
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            btnNuevo.Enabled = true;
+            btnFinalizar.Enabled = false;
+            btnNuevo.Focus();
 
         }
     }

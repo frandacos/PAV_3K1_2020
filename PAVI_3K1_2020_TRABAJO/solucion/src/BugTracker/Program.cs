@@ -1,7 +1,7 @@
 ﻿using BugTracker.Cursos;
 using BugTracker.GUILayer;
 using BugTracker.GUILayer.Usuarios_Curso;
-using BugTracker.GUILayer.UsuarioCursoAvance;
+using BugTracker.GUILayer.Usuario_Curso_Avance;
 using BugTracker.GUILayer.Categorias;
 using BugTracker.GUILayer.Actividades;
 using System;

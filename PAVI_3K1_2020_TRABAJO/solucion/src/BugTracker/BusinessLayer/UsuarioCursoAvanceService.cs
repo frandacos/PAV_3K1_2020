@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters;
 using System.Text;
 using System.Threading.Tasks;
 using BugTracker.DataAccessLayer;
@@ -17,14 +18,14 @@ namespace BugTracker.BusinessLayer
             oUsuarioCursoAvanceDao = new UsuarioCursoAvanceDao();
         }
 
-        internal object ObtenerUsuariosCurso(int idCurso, int idUsuario)
-        {
-            //SIN PARAMETROS
-            return oUsuarioCursoAvanceDao.GetUserConParametros(idCurso, idUsuario);
+        
 
-            //CON PARAMETROS
-            // return oUsuarioDao.GetUserConParametros(usuario);
+        internal IList<UsuarioCursoAvance> ConsultarConFiltrosSinParametros(String condiciones)
+        {
+            return oUsuarioCursoAvanceDao.GetByFiltersSinParametros(condiciones);
         }
+
+
     }
 }
 
