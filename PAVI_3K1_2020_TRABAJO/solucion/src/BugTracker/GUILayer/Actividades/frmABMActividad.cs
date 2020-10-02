@@ -72,7 +72,7 @@ namespace BugTracker.GUILayer.Actividades
             if (oActividadSelected != null)
             {
                 txtNombre.Text = oActividadSelected.Nombre;
-                txtDescripcion.Text = oActividadSelected.Descripcion;
+                txtDescripcion.Text = oActividadSelected.Descripcion1;
             }
         }
 
@@ -116,7 +116,7 @@ namespace BugTracker.GUILayer.Actividades
                             {
                                 var oActividad = new Actividad();
                                 oActividad.Nombre = txtNombre.Text;
-                                oActividad.Descripcion = txtDescripcion.Text;
+                                oActividad.Descripcion1 = txtDescripcion.Text;
 
 
                                 if (oActividadService.CrearActividad(oActividad))
@@ -136,7 +136,7 @@ namespace BugTracker.GUILayer.Actividades
                         if (ValidarCampos())
                         {
                             oActividadSelected.Nombre = txtNombre.Text;
-                            oActividadSelected.Descripcion = txtDescripcion.Text;
+                            oActividadSelected.Descripcion1 = txtDescripcion.Text;
 
                             if (oActividadService.ActualizarActividad(oActividadSelected))
                             {

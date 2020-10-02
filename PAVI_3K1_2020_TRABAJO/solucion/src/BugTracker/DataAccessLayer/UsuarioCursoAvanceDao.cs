@@ -53,7 +53,7 @@ namespace BugTracker.DataAccessLayer
                 " C.nombre as Nombre_curso," +
                 " UCA.id_actividad," +
                 " A.nombre as Nombre_actividad," +
-                " A.descripcion, "+
+                " A.descripcion as Descripcion_actividad , " +
                 " UCA.fin," +
                 " UCA.porc_avance," +
                 " UCA.borrado" +
@@ -95,7 +95,7 @@ namespace BugTracker.DataAccessLayer
                 {
                     Id_actividad = Convert.ToInt32(row["id_actividad"].ToString()),
                     Nombre = row["Nombre_actividad"].ToString(),
-                    Descripcion = row["descripcion"].ToString()
+                    Descripcion1 = row["Descripcion_actividad"].ToString()
                 },
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };

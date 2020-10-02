@@ -72,9 +72,9 @@
             // 
             // UsuarioCurso
             // 
+            this.UsuarioCurso.Controls.Add(this.dgvUsuarioCursoAvance);
             this.UsuarioCurso.Controls.Add(this.label1);
             this.UsuarioCurso.Controls.Add(this.pgreBar);
-            this.UsuarioCurso.Controls.Add(this.dgvUsuarioCursoAvance);
             this.UsuarioCurso.Location = new System.Drawing.Point(8, 8);
             this.UsuarioCurso.Name = "UsuarioCurso";
             this.UsuarioCurso.Size = new System.Drawing.Size(348, 295);
@@ -96,7 +96,7 @@
             // pgreBar
             // 
             this.pgreBar.Location = new System.Drawing.Point(4, 250);
-            this.pgreBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgreBar.Margin = new System.Windows.Forms.Padding(2);
             this.pgreBar.Name = "pgreBar";
             this.pgreBar.Size = new System.Drawing.Size(338, 32);
             this.pgreBar.TabIndex = 9;
@@ -104,18 +104,12 @@
             // 
             // dgvUsuarioCursoAvance
             // 
-            this.dgvUsuarioCursoAvance.AllowUserToAddRows = false;
-            this.dgvUsuarioCursoAvance.AllowUserToDeleteRows = false;
             this.dgvUsuarioCursoAvance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarioCursoAvance.Location = new System.Drawing.Point(7, 18);
-            this.dgvUsuarioCursoAvance.MultiSelect = false;
+            this.dgvUsuarioCursoAvance.Location = new System.Drawing.Point(7, 20);
             this.dgvUsuarioCursoAvance.Name = "dgvUsuarioCursoAvance";
-            this.dgvUsuarioCursoAvance.ReadOnly = true;
-            this.dgvUsuarioCursoAvance.RowHeadersWidth = 82;
-            this.dgvUsuarioCursoAvance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarioCursoAvance.Size = new System.Drawing.Size(334, 200);
-            this.dgvUsuarioCursoAvance.TabIndex = 6;
-            this.dgvUsuarioCursoAvance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarioCursoAvance_CellContentClick);
+            this.dgvUsuarioCursoAvance.Size = new System.Drawing.Size(335, 206);
+            this.dgvUsuarioCursoAvance.TabIndex = 11;
+            this.dgvUsuarioCursoAvance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarioCursoAvance_CellContentClick_1);
             // 
             // frmUsuarioCursoAvance
             // 
@@ -126,7 +120,7 @@
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.UsuarioCurso);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUsuarioCursoAvance";
             this.Text = "frmUsuarioCursoAvance";
             this.Load += new System.EventHandler(this.frmUsuarioCursoAvance_Load);
@@ -143,8 +137,8 @@
         internal System.Windows.Forms.Button btnFinalizar;
         internal System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox UsuarioCurso;
-        private System.Windows.Forms.DataGridView dgvUsuarioCursoAvance;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar pgreBar;
+        private System.Windows.Forms.DataGridView dgvUsuarioCursoAvance;
     }
 }
