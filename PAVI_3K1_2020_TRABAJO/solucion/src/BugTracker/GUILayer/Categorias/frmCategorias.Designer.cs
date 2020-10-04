@@ -101,7 +101,7 @@
             this.pnlFiltros.Size = new System.Drawing.Size(826, 602);
             this.pnlFiltros.TabIndex = 33;
             this.pnlFiltros.TabStop = false;
-            this.pnlFiltros.Text = "Categorias";
+            this.pnlFiltros.Text = "Categorías";
             this.pnlFiltros.Enter += new System.EventHandler(this.pnlFiltros_Enter);
             // 
             // dgvCategorias
@@ -172,7 +172,9 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.pnlFiltros);
             this.Name = "frmCategorias";
-            this.Text = "frmCategorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Categorías";
+            this.Load += new System.EventHandler(this.frmCategorias_Load);
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();

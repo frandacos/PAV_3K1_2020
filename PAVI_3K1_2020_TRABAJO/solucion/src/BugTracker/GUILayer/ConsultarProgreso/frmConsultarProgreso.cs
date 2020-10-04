@@ -93,7 +93,7 @@ namespace BugTracker.GUILayer
             // 
             this.cboUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsuarios.FormattingEnabled = true;
-            this.cboUsuarios.Location = new System.Drawing.Point(110, 54);
+            this.cboUsuarios.Location = new System.Drawing.Point(35, 40);
             this.cboUsuarios.Name = "cboUsuarios";
             this.cboUsuarios.Size = new System.Drawing.Size(157, 21);
             this.cboUsuarios.TabIndex = 0;
@@ -102,7 +102,7 @@ namespace BugTracker.GUILayer
             // 
             this.cboCursos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCursos.FormattingEnabled = true;
-            this.cboCursos.Location = new System.Drawing.Point(110, 102);
+            this.cboCursos.Location = new System.Drawing.Point(35, 92);
             this.cboCursos.Name = "cboCursos";
             this.cboCursos.Size = new System.Drawing.Size(157, 21);
             this.cboCursos.TabIndex = 1;
@@ -110,7 +110,7 @@ namespace BugTracker.GUILayer
             // lblUsuarios
             // 
             this.lblUsuarios.AutoSize = true;
-            this.lblUsuarios.Location = new System.Drawing.Point(61, 57);
+            this.lblUsuarios.Location = new System.Drawing.Point(45, 24);
             this.lblUsuarios.Name = "lblUsuarios";
             this.lblUsuarios.Size = new System.Drawing.Size(43, 13);
             this.lblUsuarios.TabIndex = 2;
@@ -119,7 +119,7 @@ namespace BugTracker.GUILayer
             // lblCurso
             // 
             this.lblCurso.AutoSize = true;
-            this.lblCurso.Location = new System.Drawing.Point(61, 105);
+            this.lblCurso.Location = new System.Drawing.Point(45, 76);
             this.lblCurso.Name = "lblCurso";
             this.lblCurso.Size = new System.Drawing.Size(34, 13);
             this.lblCurso.TabIndex = 3;
@@ -127,9 +127,9 @@ namespace BugTracker.GUILayer
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(298, 57);
+            this.btnConsultar.Location = new System.Drawing.Point(229, 52);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(79, 61);
+            this.btnConsultar.Size = new System.Drawing.Size(87, 44);
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@ namespace BugTracker.GUILayer
             // 
             // frmConsultarProgreso
             // 
-            this.ClientSize = new System.Drawing.Size(448, 183);
+            this.ClientSize = new System.Drawing.Size(359, 155);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.lblCurso);
             this.Controls.Add(this.lblUsuarios);

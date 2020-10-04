@@ -56,6 +56,7 @@ namespace BugTracker.DataAccessLayer
                 " A.descripcion, "+
                 " UCA.fin," +
                 " UCA.porc_avance," +
+                " UCA.finalizado," +
                 " UCA.borrado" +
                 " FROM UsuariosCursoAvance UCA INNER JOIN Usuarios U ON (UCA.id_usuario=U.id_usuario) " +
                 " INNER JOIN Cursos C ON (UCA.id_curso = C.id_curso)" +
@@ -97,6 +98,8 @@ namespace BugTracker.DataAccessLayer
                     Nombre = row["Nombre_actividad"].ToString(),
                     Descripcion = row["descripcion"].ToString()
                 },
+             
+                Finalizado = Convert.ToBoolean(row["finalizado"].ToString()),
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
             return oUsuarioCursoAvance;

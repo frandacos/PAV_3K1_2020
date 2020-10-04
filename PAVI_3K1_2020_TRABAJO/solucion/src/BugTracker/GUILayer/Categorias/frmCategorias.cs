@@ -19,8 +19,46 @@ namespace BugTracker.GUILayer.Categorias
         public frmCategorias()
         {
             InitializeComponent();
+            InitializeDataGridView();
             oCursoService = new CursoService();
             oCategoriaService = new CategoriaService();
+        }
+
+        private void InitializeDataGridView()
+        {
+            // Cree un DataGridView no vinculado declarando un recuento de columnas.
+            dgvCategorias.ColumnCount = 3;
+            dgvCategorias.ColumnHeadersVisible = true;
+
+            // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
+            dgvCategorias.AutoGenerateColumns = false;
+
+            // Cambia el estilo de la cabecera de la grilla.
+            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+
+            columnHeaderStyle.BackColor = Color.Beige;
+            columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
+            dgvCategorias.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+
+            // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
+            dgvCategorias.Columns[0].Name = "Id Categoria";
+            dgvCategorias.Columns[0].DataPropertyName = "id_categoria";
+            dgvCategorias.Columns[0].Width = 115;
+            // Definimos el ancho de la columna.
+
+            dgvCategorias.Columns[1].Name = "Nombre";
+            dgvCategorias.Columns[1].DataPropertyName = "nombre";
+            dgvCategorias.Columns[1].Width = 115;
+
+            dgvCategorias.Columns[2].Name = "Descripcion";
+            dgvCategorias.Columns[2].DataPropertyName = "descripcion";
+            dgvCategorias.Columns[2].Width = 300;
+
+            // Cambia el tamaño de la altura de los encabezados de columna.
+            //dgvObjetivos.AutoResizeColumnHeadersHeight();
+
+            // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
+            //dgvObjetivos.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
 
         private void btnSalir_Click_1(object sender, EventArgs e)
@@ -138,6 +176,11 @@ namespace BugTracker.GUILayer.Categorias
         }
 
         private void dgvCategorias_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void frmCategorias_Load(object sender, EventArgs e)
         {
 
         }

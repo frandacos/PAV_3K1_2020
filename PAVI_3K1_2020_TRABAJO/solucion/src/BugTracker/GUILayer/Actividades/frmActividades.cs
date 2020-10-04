@@ -18,7 +18,45 @@ namespace BugTracker.GUILayer.Actividades
         public frmActividades()
         {
             InitializeComponent();
+            InitializeDataGridView();
             oActividadService = new ActividadService();
+        }
+
+        private void InitializeDataGridView()
+        {
+            // Cree un DataGridView no vinculado declarando un recuento de columnas.
+            dgvActividades.ColumnCount = 3;
+            dgvActividades.ColumnHeadersVisible = true;
+
+            // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
+            dgvActividades.AutoGenerateColumns = false;
+
+            // Cambia el estilo de la cabecera de la grilla.
+            DataGridViewCellStyle columnHeaderStyle = new DataGridViewCellStyle();
+
+            columnHeaderStyle.BackColor = Color.Beige;
+            columnHeaderStyle.Font = new Font("Verdana", 8, FontStyle.Bold);
+            dgvActividades.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
+
+            // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
+            dgvActividades.Columns[0].Name = "Id Actividad";
+            dgvActividades.Columns[0].DataPropertyName = "id_actividad";
+            dgvActividades.Columns[0].Width = 115;
+            // Definimos el ancho de la columna.
+
+            dgvActividades.Columns[1].Name = "Nombre";
+            dgvActividades.Columns[1].DataPropertyName = "nombre";
+            dgvActividades.Columns[1].Width = 115;
+
+            dgvActividades.Columns[2].Name = "Descripcion";
+            dgvActividades.Columns[2].DataPropertyName = "descripcion";
+            dgvActividades.Columns[2].Width = 300;
+
+            // Cambia el tamaño de la altura de los encabezados de columna.
+            //dgvObjetivos.AutoResizeColumnHeadersHeight();
+
+            // Cambia el tamaño de todas las alturas de fila para ajustar el contenido de todas las celdas que no sean de encabezado.
+            //dgvObjetivos.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -109,6 +147,11 @@ namespace BugTracker.GUILayer.Actividades
             {
                 txtNombreAct.Enabled = true;
             }
+        }
+
+        private void dgvActividades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

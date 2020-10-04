@@ -73,6 +73,7 @@
             this.dgvActividades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvActividades.Size = new System.Drawing.Size(814, 398);
             this.dgvActividades.TabIndex = 8;
+            this.dgvActividades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvActividades_CellContentClick);
             // 
             // chkTodos
             // 
@@ -170,7 +171,8 @@
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.pnlFiltros);
             this.Name = "frmActividades";
-            this.Text = "frmActividades";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Actividades";
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).EndInit();

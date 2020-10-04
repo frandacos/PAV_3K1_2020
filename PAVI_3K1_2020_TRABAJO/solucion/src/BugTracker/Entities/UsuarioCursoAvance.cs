@@ -15,12 +15,14 @@ namespace BugTracker.Entities
         private DateTime fin;
         private int porc_avance;
         private Boolean borrado;
+        private Boolean finalizado;
 
 
-     
+
         public DateTime Fin { get => fin; set => fin = value; }
         public int Porc_avance { get => porc_avance; set => porc_avance = value; }
         public bool Borrado { get => borrado; set => borrado = value; }
+        public bool Finalizado { get => finalizado; set => finalizado = value; }
         public Usuario Usuario { get => usuario; set => usuario = value; }
         public Curso Curso { get => curso; set => curso = value; }
         public Actividad Actividad { get => actividad; set => actividad = value; }

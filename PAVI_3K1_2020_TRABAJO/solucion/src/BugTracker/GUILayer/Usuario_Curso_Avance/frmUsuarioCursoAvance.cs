@@ -21,16 +21,6 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         public int idCurso;
         public int idUsuario;
 
-
-        public frmUsuarioCursoAvance()
-        {
-            InitializeComponent();
-            InitializeDataGridView();
-            oUsuarioCursoAvanceService = new UsuarioCursoAvanceService();
-            oUsuarioCursoAvance = new UsuarioCursoAvance();
-            
-        }
-
         public frmUsuarioCursoAvance(int idCurso, int idUsuario)
         {
             InitializeComponent();
@@ -44,7 +34,7 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         private void InitializeDataGridView()
         {
             // Cree un DataGridView no vinculado declarando un recuento de columnas.
-            dgvUsuarioCursoAvance.ColumnCount = 2;
+            dgvUsuarioCursoAvance.ColumnCount = 3;
             dgvUsuarioCursoAvance.ColumnHeadersVisible = true;
 
             // Configuramos la AutoGenerateColumns en false para que no se autogeneren las columnas
@@ -64,6 +54,9 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
 
             dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
             dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion";
+
+            dgvUsuarioCursoAvance.Columns[2].Name = "Finalizado";
+            dgvUsuarioCursoAvance.Columns[2].DataPropertyName = "Finalizado";
 
 
             // Cambia el tamaño de la altura de los encabezados de columna.

@@ -42,9 +42,10 @@
             // btnSalir
             // 
             this.btnSalir.Image = global::BugTracker.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(318, 309);
+            this.btnSalir.Location = new System.Drawing.Point(636, 594);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(40, 40);
+            this.btnSalir.Size = new System.Drawing.Size(80, 77);
             this.btnSalir.TabIndex = 18;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -52,9 +53,10 @@
             // btnFinalizar
             // 
             this.btnFinalizar.Enabled = false;
-            this.btnFinalizar.Location = new System.Drawing.Point(90, 309);
+            this.btnFinalizar.Location = new System.Drawing.Point(476, 589);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(6);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(74, 40);
+            this.btnFinalizar.Size = new System.Drawing.Size(148, 77);
             this.btnFinalizar.TabIndex = 16;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = true;
@@ -62,11 +64,12 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Location = new System.Drawing.Point(9, 309);
+            this.btnNuevo.Location = new System.Drawing.Point(15, 594);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(6);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(74, 40);
+            this.btnNuevo.Size = new System.Drawing.Size(128, 77);
             this.btnNuevo.TabIndex = 15;
-            this.btnNuevo.Text = "Iniciar";
+            this.btnNuevo.Text = "Finalizar Actividad";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
@@ -75,9 +78,11 @@
             this.UsuarioCurso.Controls.Add(this.label1);
             this.UsuarioCurso.Controls.Add(this.pgreBar);
             this.UsuarioCurso.Controls.Add(this.dgvUsuarioCursoAvance);
-            this.UsuarioCurso.Location = new System.Drawing.Point(8, 8);
+            this.UsuarioCurso.Location = new System.Drawing.Point(15, 15);
+            this.UsuarioCurso.Margin = new System.Windows.Forms.Padding(6);
             this.UsuarioCurso.Name = "UsuarioCurso";
-            this.UsuarioCurso.Size = new System.Drawing.Size(348, 295);
+            this.UsuarioCurso.Padding = new System.Windows.Forms.Padding(6);
+            this.UsuarioCurso.Size = new System.Drawing.Size(696, 567);
             this.UsuarioCurso.TabIndex = 14;
             this.UsuarioCurso.TabStop = false;
             this.UsuarioCurso.Text = "Atividades del Curso:";
@@ -86,19 +91,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 229);
+            this.label1.Location = new System.Drawing.Point(20, 440);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.Size = new System.Drawing.Size(111, 25);
             this.label1.TabIndex = 10;
             this.label1.Text = "Progreso: ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pgreBar
             // 
-            this.pgreBar.Location = new System.Drawing.Point(4, 250);
-            this.pgreBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pgreBar.Location = new System.Drawing.Point(8, 481);
+            this.pgreBar.Margin = new System.Windows.Forms.Padding(4);
             this.pgreBar.Name = "pgreBar";
-            this.pgreBar.Size = new System.Drawing.Size(338, 32);
+            this.pgreBar.Size = new System.Drawing.Size(676, 62);
             this.pgreBar.TabIndex = 9;
             this.pgreBar.Click += new System.EventHandler(this.pgreBar_Click);
             // 
@@ -107,28 +113,30 @@
             this.dgvUsuarioCursoAvance.AllowUserToAddRows = false;
             this.dgvUsuarioCursoAvance.AllowUserToDeleteRows = false;
             this.dgvUsuarioCursoAvance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarioCursoAvance.Location = new System.Drawing.Point(7, 18);
+            this.dgvUsuarioCursoAvance.Location = new System.Drawing.Point(14, 35);
+            this.dgvUsuarioCursoAvance.Margin = new System.Windows.Forms.Padding(6);
             this.dgvUsuarioCursoAvance.MultiSelect = false;
             this.dgvUsuarioCursoAvance.Name = "dgvUsuarioCursoAvance";
             this.dgvUsuarioCursoAvance.ReadOnly = true;
             this.dgvUsuarioCursoAvance.RowHeadersWidth = 82;
             this.dgvUsuarioCursoAvance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarioCursoAvance.Size = new System.Drawing.Size(334, 200);
+            this.dgvUsuarioCursoAvance.Size = new System.Drawing.Size(668, 385);
             this.dgvUsuarioCursoAvance.TabIndex = 6;
             this.dgvUsuarioCursoAvance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarioCursoAvance_CellContentClick);
             // 
             // frmUsuarioCursoAvance
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 354);
+            this.ClientSize = new System.Drawing.Size(724, 681);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.UsuarioCurso);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmUsuarioCursoAvance";
-            this.Text = "frmUsuarioCursoAvance";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Avance del Curso";
             this.Load += new System.EventHandler(this.frmUsuarioCursoAvance_Load);
             this.UsuarioCurso.ResumeLayout(false);
             this.UsuarioCurso.PerformLayout();

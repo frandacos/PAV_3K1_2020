@@ -47,7 +47,7 @@
             // lblN_Curso
             // 
             this.lblN_Curso.AutoSize = true;
-            this.lblN_Curso.Location = new System.Drawing.Point(90, 38);
+            this.lblN_Curso.Location = new System.Drawing.Point(26, 55);
             this.lblN_Curso.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblN_Curso.Name = "lblN_Curso";
             this.lblN_Curso.Size = new System.Drawing.Size(158, 25);
@@ -57,7 +57,7 @@
             // lblN_Usuario
             // 
             this.lblN_Usuario.AutoSize = true;
-            this.lblN_Usuario.Location = new System.Drawing.Point(74, 119);
+            this.lblN_Usuario.Location = new System.Drawing.Point(10, 136);
             this.lblN_Usuario.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblN_Usuario.Name = "lblN_Usuario";
             this.lblN_Usuario.Size = new System.Drawing.Size(176, 25);
@@ -66,20 +66,20 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(540, 179);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnConsultar.Location = new System.Drawing.Point(675, 66);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(182, 60);
+            this.btnConsultar.Size = new System.Drawing.Size(174, 85);
             this.btnConsultar.TabIndex = 4;
-            this.btnConsultar.Text = "CONSULTAR";
+            this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(302, 179);
-            this.chkTodos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chkTodos.Location = new System.Drawing.Point(201, 193);
+            this.chkTodos.Margin = new System.Windows.Forms.Padding(6);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(104, 29);
             this.chkTodos.TabIndex = 5;
@@ -92,14 +92,14 @@
             this.dgvUsuarioCurso.AllowUserToAddRows = false;
             this.dgvUsuarioCurso.AllowUserToDeleteRows = false;
             this.dgvUsuarioCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarioCurso.Location = new System.Drawing.Point(46, 275);
-            this.dgvUsuarioCurso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvUsuarioCurso.Location = new System.Drawing.Point(8, 259);
+            this.dgvUsuarioCurso.Margin = new System.Windows.Forms.Padding(6);
             this.dgvUsuarioCurso.MultiSelect = false;
             this.dgvUsuarioCurso.Name = "dgvUsuarioCurso";
             this.dgvUsuarioCurso.ReadOnly = true;
             this.dgvUsuarioCurso.RowHeadersWidth = 82;
             this.dgvUsuarioCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarioCurso.Size = new System.Drawing.Size(738, 331);
+            this.dgvUsuarioCurso.Size = new System.Drawing.Size(882, 353);
             this.dgvUsuarioCurso.TabIndex = 6;
             this.dgvUsuarioCurso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarioCurso_CellContentClick);
             // 
@@ -107,8 +107,8 @@
             // 
             this.cboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(302, 104);
-            this.cboUsuario.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboUsuario.Location = new System.Drawing.Point(201, 128);
+            this.cboUsuario.Margin = new System.Windows.Forms.Padding(6);
             this.cboUsuario.Name = "cboUsuario";
             this.cboUsuario.Size = new System.Drawing.Size(416, 33);
             this.cboUsuario.TabIndex = 7;
@@ -117,8 +117,8 @@
             // 
             this.cboCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCurso.FormattingEnabled = true;
-            this.cboCurso.Location = new System.Drawing.Point(302, 38);
-            this.cboCurso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.cboCurso.Location = new System.Drawing.Point(201, 55);
+            this.cboCurso.Margin = new System.Windows.Forms.Padding(6);
             this.cboCurso.Name = "cboCurso";
             this.cboCurso.Size = new System.Drawing.Size(416, 33);
             this.cboCurso.TabIndex = 8;
@@ -132,21 +132,21 @@
             this.UsuarioCurso.Controls.Add(this.btnConsultar);
             this.UsuarioCurso.Controls.Add(this.lblN_Usuario);
             this.UsuarioCurso.Controls.Add(this.lblN_Curso);
-            this.UsuarioCurso.Location = new System.Drawing.Point(22, 23);
-            this.UsuarioCurso.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.UsuarioCurso.Location = new System.Drawing.Point(13, 15);
+            this.UsuarioCurso.Margin = new System.Windows.Forms.Padding(6);
             this.UsuarioCurso.Name = "UsuarioCurso";
-            this.UsuarioCurso.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.UsuarioCurso.Size = new System.Drawing.Size(798, 631);
+            this.UsuarioCurso.Padding = new System.Windows.Forms.Padding(6);
+            this.UsuarioCurso.Size = new System.Drawing.Size(890, 624);
             this.UsuarioCurso.TabIndex = 9;
             this.UsuarioCurso.TabStop = false;
-            this.UsuarioCurso.Text = "Filtros";
+            this.UsuarioCurso.Text = "Buscar Usuario en Curso";
             this.UsuarioCurso.Enter += new System.EventHandler(this.UsuarioCurso_Enter);
             // 
             // btnNuevo
             // 
             this.btnNuevo.Image = global::BugTracker.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(22, 665);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnNuevo.Location = new System.Drawing.Point(26, 651);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(6);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(80, 77);
             this.btnNuevo.TabIndex = 10;
@@ -157,8 +157,8 @@
             // 
             this.btnEditar.Enabled = false;
             this.btnEditar.Image = global::BugTracker.Properties.Resources.editar;
-            this.btnEditar.Location = new System.Drawing.Point(118, 665);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnEditar.Location = new System.Drawing.Point(122, 651);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(80, 77);
             this.btnEditar.TabIndex = 11;
@@ -169,8 +169,8 @@
             // 
             this.btnQuitar.Enabled = false;
             this.btnQuitar.Image = global::BugTracker.Properties.Resources.eliminar;
-            this.btnQuitar.Location = new System.Drawing.Point(210, 665);
-            this.btnQuitar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnQuitar.Location = new System.Drawing.Point(214, 651);
+            this.btnQuitar.Margin = new System.Windows.Forms.Padding(6);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(80, 77);
             this.btnQuitar.TabIndex = 12;
@@ -180,8 +180,8 @@
             // btnSalir
             // 
             this.btnSalir.Image = global::BugTracker.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(740, 665);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSalir.Location = new System.Drawing.Point(823, 651);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 77);
             this.btnSalir.TabIndex = 13;
@@ -192,17 +192,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 762);
+            this.ClientSize = new System.Drawing.Size(918, 745);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.UsuarioCurso);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmUsuarioCurso";
-            this.Text = "frmUsuarioCurso";
+            this.Text = "Usuario Curso";
             this.Load += new System.EventHandler(this.frmUsuarioCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarioCurso)).EndInit();
             this.UsuarioCurso.ResumeLayout(false);

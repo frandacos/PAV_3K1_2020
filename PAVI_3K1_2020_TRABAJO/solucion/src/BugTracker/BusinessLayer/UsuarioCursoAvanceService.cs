@@ -9,7 +9,7 @@ using BugTracker.Entities;
 
 namespace BugTracker.BusinessLayer
 {
-    class UsuarioCursoAvanceService
+    public class UsuarioCursoAvanceService
     {
         private UsuarioCursoAvanceDao oUsuarioCursoAvanceDao;
 

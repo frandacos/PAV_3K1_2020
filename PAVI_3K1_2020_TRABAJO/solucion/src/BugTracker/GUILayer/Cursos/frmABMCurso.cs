@@ -224,6 +224,14 @@ namespace BugTracker.Cursos
             this.Close();
         }
 
-        
+        private void txtIdCurso_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpFechaVigencia_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
