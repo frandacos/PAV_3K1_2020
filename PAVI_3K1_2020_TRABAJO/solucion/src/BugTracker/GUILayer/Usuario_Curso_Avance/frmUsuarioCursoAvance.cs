@@ -48,12 +48,12 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             dgvUsuarioCursoAvance.ColumnHeadersDefaultCellStyle = columnHeaderStyle;
 
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
-            dgvUsuarioCursoAvance.Columns[0].Name = "Actividad";
+            dgvUsuarioCursoAvance.Columns[0].Name = "Actividades";
             dgvUsuarioCursoAvance.Columns[0].DataPropertyName = "Actividad";
             // Definimos el ancho de la columna.
 
-            dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
-            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion";
+            dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion1";
+            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion1";
 
             dgvUsuarioCursoAvance.Columns[2].Name = "Finalizado";
             dgvUsuarioCursoAvance.Columns[2].DataPropertyName = "Finalizado";
@@ -128,6 +128,11 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             btnNuevo.Enabled = true;
             btnFinalizar.Enabled = false;
             btnNuevo.Focus();
+
+        }
+
+        private void dgvUsuarioCursoAvance_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

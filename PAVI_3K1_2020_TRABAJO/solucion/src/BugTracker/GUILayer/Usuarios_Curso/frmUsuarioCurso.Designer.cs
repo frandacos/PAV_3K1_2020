@@ -47,29 +47,29 @@
             // lblN_Curso
             // 
             this.lblN_Curso.AutoSize = true;
-            this.lblN_Curso.Location = new System.Drawing.Point(26, 55);
+            this.lblN_Curso.Location = new System.Drawing.Point(15, 35);
             this.lblN_Curso.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblN_Curso.Name = "lblN_Curso";
-            this.lblN_Curso.Size = new System.Drawing.Size(158, 25);
+            this.lblN_Curso.Size = new System.Drawing.Size(79, 13);
             this.lblN_Curso.TabIndex = 0;
             this.lblN_Curso.Text = "Nombre curso: ";
             // 
             // lblN_Usuario
             // 
             this.lblN_Usuario.AutoSize = true;
-            this.lblN_Usuario.Location = new System.Drawing.Point(10, 136);
+            this.lblN_Usuario.Location = new System.Drawing.Point(7, 63);
             this.lblN_Usuario.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblN_Usuario.Name = "lblN_Usuario";
-            this.lblN_Usuario.Size = new System.Drawing.Size(176, 25);
+            this.lblN_Usuario.Size = new System.Drawing.Size(87, 13);
             this.lblN_Usuario.TabIndex = 1;
             this.lblN_Usuario.Text = "Nombre usuario: ";
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(675, 66);
+            this.btnConsultar.Location = new System.Drawing.Point(331, 35);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(6);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(174, 85);
+            this.btnConsultar.Size = new System.Drawing.Size(85, 48);
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -78,10 +78,10 @@
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(201, 193);
+            this.chkTodos.Location = new System.Drawing.Point(98, 96);
             this.chkTodos.Margin = new System.Windows.Forms.Padding(6);
             this.chkTodos.Name = "chkTodos";
-            this.chkTodos.Size = new System.Drawing.Size(104, 29);
+            this.chkTodos.Size = new System.Drawing.Size(56, 17);
             this.chkTodos.TabIndex = 5;
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = true;
@@ -92,14 +92,14 @@
             this.dgvUsuarioCurso.AllowUserToAddRows = false;
             this.dgvUsuarioCurso.AllowUserToDeleteRows = false;
             this.dgvUsuarioCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarioCurso.Location = new System.Drawing.Point(8, 259);
+            this.dgvUsuarioCurso.Location = new System.Drawing.Point(0, 125);
             this.dgvUsuarioCurso.Margin = new System.Windows.Forms.Padding(6);
             this.dgvUsuarioCurso.MultiSelect = false;
             this.dgvUsuarioCurso.Name = "dgvUsuarioCurso";
             this.dgvUsuarioCurso.ReadOnly = true;
             this.dgvUsuarioCurso.RowHeadersWidth = 82;
             this.dgvUsuarioCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarioCurso.Size = new System.Drawing.Size(882, 353);
+            this.dgvUsuarioCurso.Size = new System.Drawing.Size(426, 184);
             this.dgvUsuarioCurso.TabIndex = 6;
             this.dgvUsuarioCurso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarioCurso_CellContentClick);
             // 
@@ -107,20 +107,20 @@
             // 
             this.cboUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUsuario.FormattingEnabled = true;
-            this.cboUsuario.Location = new System.Drawing.Point(201, 128);
+            this.cboUsuario.Location = new System.Drawing.Point(98, 63);
             this.cboUsuario.Margin = new System.Windows.Forms.Padding(6);
             this.cboUsuario.Name = "cboUsuario";
-            this.cboUsuario.Size = new System.Drawing.Size(416, 33);
+            this.cboUsuario.Size = new System.Drawing.Size(210, 21);
             this.cboUsuario.TabIndex = 7;
             // 
             // cboCurso
             // 
             this.cboCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCurso.FormattingEnabled = true;
-            this.cboCurso.Location = new System.Drawing.Point(201, 55);
+            this.cboCurso.Location = new System.Drawing.Point(98, 32);
             this.cboCurso.Margin = new System.Windows.Forms.Padding(6);
             this.cboCurso.Name = "cboCurso";
-            this.cboCurso.Size = new System.Drawing.Size(416, 33);
+            this.cboCurso.Size = new System.Drawing.Size(210, 21);
             this.cboCurso.TabIndex = 8;
             // 
             // UsuarioCurso
@@ -136,7 +136,7 @@
             this.UsuarioCurso.Margin = new System.Windows.Forms.Padding(6);
             this.UsuarioCurso.Name = "UsuarioCurso";
             this.UsuarioCurso.Padding = new System.Windows.Forms.Padding(6);
-            this.UsuarioCurso.Size = new System.Drawing.Size(890, 624);
+            this.UsuarioCurso.Size = new System.Drawing.Size(426, 309);
             this.UsuarioCurso.TabIndex = 9;
             this.UsuarioCurso.TabStop = false;
             this.UsuarioCurso.Text = "Buscar Usuario en Curso";
@@ -145,10 +145,10 @@
             // btnNuevo
             // 
             this.btnNuevo.Image = global::BugTracker.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(26, 651);
+            this.btnNuevo.Location = new System.Drawing.Point(15, 336);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(6);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(80, 77);
+            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 10;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -157,10 +157,10 @@
             // 
             this.btnEditar.Enabled = false;
             this.btnEditar.Image = global::BugTracker.Properties.Resources.editar;
-            this.btnEditar.Location = new System.Drawing.Point(122, 651);
+            this.btnEditar.Location = new System.Drawing.Point(67, 336);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(80, 77);
+            this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 11;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -169,10 +169,10 @@
             // 
             this.btnQuitar.Enabled = false;
             this.btnQuitar.Image = global::BugTracker.Properties.Resources.eliminar;
-            this.btnQuitar.Location = new System.Drawing.Point(214, 651);
+            this.btnQuitar.Location = new System.Drawing.Point(119, 336);
             this.btnQuitar.Margin = new System.Windows.Forms.Padding(6);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(80, 77);
+            this.btnQuitar.Size = new System.Drawing.Size(40, 40);
             this.btnQuitar.TabIndex = 12;
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
@@ -180,19 +180,19 @@
             // btnSalir
             // 
             this.btnSalir.Image = global::BugTracker.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(823, 651);
+            this.btnSalir.Location = new System.Drawing.Point(389, 336);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 77);
+            this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.TabIndex = 13;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmUsuarioCurso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 745);
+            this.ClientSize = new System.Drawing.Size(448, 383);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnEditar);
