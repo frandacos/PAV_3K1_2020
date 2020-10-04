@@ -18,8 +18,8 @@ namespace BugTracker.BusinessLayer
             oUsuarioCursoAvanceDao = new UsuarioCursoAvanceDao();
         }
 
-        
 
+  
         internal IList<UsuarioCursoAvance> ConsultarConFiltrosSinParametros(String condiciones)
         {
             return oUsuarioCursoAvanceDao.GetByFiltersSinParametros(condiciones);

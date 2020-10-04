@@ -21,6 +21,15 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         public int idCurso;
         public int idUsuario;
 
+        public frmUsuarioCursoAvance()
+        {
+            InitializeComponent();
+            InitializeDataGridView();
+            this.idCurso = idCurso;
+            this.idUsuario = idUsuario;
+            oUsuarioCursoAvanceService = new UsuarioCursoAvanceService();
+
+        }
         public frmUsuarioCursoAvance(int idCurso, int idUsuario)
         {
             InitializeComponent();
@@ -52,7 +61,7 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             dgvUsuarioCursoAvance.Columns[0].DataPropertyName = "Actividad";
             // Definimos el ancho de la columna.
 
-            dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion1";
+            dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
             dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion1";
 
             dgvUsuarioCursoAvance.Columns[2].Name = "Finalizado";
@@ -89,7 +98,6 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
 
         private void frmUsuarioCursoAvance_Load(object sender, EventArgs e)
         {
-            btnFinalizar.Enabled = false;
             btnNuevo.Enabled = true;
             String condiciones = "";
             condiciones += " AND UCA.id_curso=" + idCurso;
@@ -113,10 +121,31 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             var actividad = (UsuarioCursoAvance)dgvUsuarioCursoAvance.CurrentRow.DataBoundItem;
+            //var id_actividad = dgvUsuarioCursoAvance.CurrentCell.Value.ToString();
+            String condicioness = "";
+            condicioness += " AND UCA.id_curso=" + idCurso;
+            condicioness += " AND UCA.id_usuario=" + idUsuario;
+            condicioness += " AND UCA.id_actividad=" + (actividad.Actividad.Id_actividad);
+            
+            
+            //if (oUsuarioCursoAvance.RegistrarActividad(condicioness))
+            //{
+
+            //    MessageBox.Show("Actividad registrada!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.Close();
+            //}
+            
+            frmUsuarioCursoAvance_Load(sender, e);
             btnNuevo.Enabled = false;
-            btnFinalizar.Enabled = true;
-            btnFinalizar.Focus();
-            //dgvUsuarioCursoAvance.CurrentRow.DefaultCellStyle.BackColor = Color.Aquamarine;
+            MessageBox.Show("Se debe ingresar un usuario.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+
+
+
+
+
+
             //oUsuarioCursoAvance.Fin = DateTime.Today;
 
             //oUsuarioCursoAvanceService.ActualizarUsuarioCursoAvance(oUsuarioCursoAvance);
