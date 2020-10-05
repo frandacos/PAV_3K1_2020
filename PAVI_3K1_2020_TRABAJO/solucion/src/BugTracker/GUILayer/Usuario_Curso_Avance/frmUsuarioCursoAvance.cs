@@ -26,7 +26,7 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         public frmUsuarioCursoAvance()
         {
             InitializeComponent();
-            //InitializeDataGridView();
+            InitializeDataGridView();
             this.idCurso = idCurso;
             this.idUsuario = idUsuario;
             oUsuarioCursoAvanceService = new UsuarioCursoAvanceService();
@@ -119,7 +119,16 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
                 }
             }
             int filas_true = count;
-            decimal total = (filas_true*100)/filas_totales;
+            decimal total;
+            if (filas_totales == 0)
+            {
+                total = 0;
+            }
+            else
+            {
+                total = (filas_true * 100) / filas_totales;
+            }
+            
             label2.Text = Convert.ToString(total) + '%';
 
             int total2 = Convert.ToInt32(total);

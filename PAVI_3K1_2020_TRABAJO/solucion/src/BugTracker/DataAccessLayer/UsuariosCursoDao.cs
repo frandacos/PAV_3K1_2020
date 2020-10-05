@@ -173,7 +173,7 @@ namespace BugTracker.DataAccessLayer
                                  "'"+ oUsuariosCurso.Usuario.IdUsuario + "'," 
                                + "'" + oUsuariosCurso.Curso.Id_curso + "'," 
                                + "'" + oUsuariosCurso.Puntuacion +  "'," 
-                               + "'" + oUsuariosCurso.Observaciones+ "'" + "," 
+                               + "'" + oUsuariosCurso.Observaciones + "'" + "," 
                                + "'" + oUsuariosCurso.Fecha_inicio.ToString("yyyy-MM-dd") + "',"
                                + "NULL, 0) ";
                             
@@ -181,8 +181,8 @@ namespace BugTracker.DataAccessLayer
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
                 dm.EjecutarSQL(str_sql);
 
-                string sql = "INSERT INTO UsuariosCursoAvance (id_usuario, id_curso, id_actividad, porc_avance, borrado) " +
-                             " SELECT uc.id_usuario, uc.id_curso, ac.id_actividad, ac.porc_de_avance, ac.borrado" +
+                string sql = "INSERT INTO UsuariosCursoAvance (id_usuario, id_curso, id_actividad, porc_avance, finalizado, borrado) " +
+                             " SELECT uc.id_usuario, uc.id_curso, ac.id_actividad, ac.porc_de_avance, ac.borrado , ac.borrado" +
                              " FROM UsuariosCurso uc INNER JOIN ActividadesXCurso ac ON " +
                              " (uc.id_curso=ac.id_curso)" +
                              " WHERE uc.id_usuario =" + oUsuariosCurso.Usuario.IdUsuario +
