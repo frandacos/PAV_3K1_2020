@@ -122,9 +122,6 @@ namespace BugTracker.DataAccessLayer
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
 
                 dm.EjecutarSQL(str_sql);
-
-                
-
                 dm.Commit();
             }
 
@@ -141,40 +138,6 @@ namespace BugTracker.DataAccessLayer
             return true;
         }
 
-        //internal int ConsultarUsuariosTrue(int id_usuario, int id_curso)
-        //{
-            
-        //    //SIN PARAMETROS
-        //    DataManager dm = new DataManager();
-        //    int contar;
-        //    try
-        //    {
-        //        dm.Open();
-        //        dm.BeginTransaction();
-
-
-        //        string str_sql = "SELECT COUNT(finalizado) FROM UsuariosCursoAvance WHERE id_curso = " + id_curso + " AND id_usuario = " + id_usuario + " AND finalizado = 1 AND borrado = 0";
-        //        //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
-
-        //        contar = dm.EjecutarSQL(str_sql);
-                
-
-        //        dm.Commit();
-                
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-        //        dm.Rollback();
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        // Cierra la conexión 
-        //        dm.Close();
-        //    }
-        //    return contar;
-        //}
 
     }
 

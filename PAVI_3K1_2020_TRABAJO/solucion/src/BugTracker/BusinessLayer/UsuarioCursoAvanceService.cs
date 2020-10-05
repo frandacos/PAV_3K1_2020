@@ -30,11 +30,6 @@ namespace BugTracker.BusinessLayer
         {
             return oUsuarioCursoAvanceDao.UpdateActividad(id_usuario, id_curso, id_actividad);
         }
-
-        //internal int UsuariosTrue(int id_usuario, int id_curso)
-        //{
-        //    return oUsuarioCursoAvanceDao.ConsultarUsuariosTrue(id_usuario, id_curso);
-        //}
     }
 }
 

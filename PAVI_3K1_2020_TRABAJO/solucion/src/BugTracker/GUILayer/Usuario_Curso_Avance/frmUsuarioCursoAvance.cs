@@ -21,7 +21,8 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         public int idCurso;
         public int idUsuario;
         private UsuarioCursoAvance oUsuarioCursoAvanceSelected;
-
+       
+       
         public frmUsuarioCursoAvance()
         {
             InitializeComponent();
@@ -108,31 +109,22 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             dgvUsuarioCursoAvance.DataSource = oUsuarioCursoAvanceService.ConsultarConFiltrosSinParametros(condiciones);
 
             int filas_totales = dgvUsuarioCursoAvance.RowCount;
+            int count = 0;
+            for (int fila = 0; fila < filas_totales ; fila++)
+            {
 
-            
-            
-            
-
-            //for (int i = 0; i <= filas_totales; i++)
-            //{
-            //    if (dgvUsuarioCursoAvance.CurrentRow[i].Cells[2].Value.ToString() == "True")
-            //        count += 1;
-
-            //}
-
-
-            //label2.Text = dgvUsuarioCursoAvance.CurrentRow.Cells[1].Value.ToString();
-            int filas_true = 3;
+                if (dgvUsuarioCursoAvance.Rows[fila].Cells[2].Value.ToString() == "True")
+                {
+                    count += 1;
+                }
+            }
+            int filas_true = count;
             decimal total = (filas_true*100)/filas_totales;
             label2.Text = Convert.ToString(total) + '%';
+
             int total2 = Convert.ToInt32(total);
             pbrPorcentaje.Value = total2;
             //oUsuarioCursoAvanceService.ActividadesRealizadas();
-
-
-
-
-
 
         }
 
@@ -153,11 +145,8 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             var id_usuario = actividad.Usuario.IdUsuario;
             var id_curso = actividad.Curso.Id_curso;
             var id_actividad = actividad.Actividad.Id_actividad;
-            int resultado = 0;
-
             oUsuarioCursoAvanceService.ActualizarActUsuarioCursoAvance(id_usuario, id_curso, id_actividad);
-            //resultado = oUsuarioCursoAvanceService.UsuariosTrue(id_usuario, id_curso);
-           
+            
             frmUsuarioCursoAvance_Load(sender, e);
             btnNuevo.Enabled = true;
             
@@ -183,6 +172,19 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         private void txtPorcentaje_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvUsuarioCursoAvance_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                if (e.Value is bool)
+                {
+                    bool value = (bool)e.Value;
+                    e.Value = (value) ? "Si" : "No";
+                    e.FormattingApplied = true;
+                }
+            }
         }
     }
 }
