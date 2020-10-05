@@ -113,7 +113,7 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             for (int fila = 0; fila < filas_totales ; fila++)
             {
 
-                if (dgvUsuarioCursoAvance.Rows[fila].Cells[2].Value.ToString() == "True")
+                if (dgvUsuarioCursoAvance.Rows[fila].Cells[2].Value is true)
                 {
                     count += 1;
                 }
