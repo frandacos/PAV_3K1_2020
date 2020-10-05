@@ -8,20 +8,10 @@ namespace BugTracker.Entities
 {
     public class Actividad
     {
-        private int id_actividad;
-        private string nombre;
-        private string Descripcion;
-        private Boolean borrado;
-
-
-        public int Id_actividad { get => id_actividad; set => id_actividad = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        
-        public Boolean Borrado { get => borrado; set => borrado = value; }
-        
-        
-        
-        public string Descripcion1 { get => this.Descripcion; set => this.Descripcion = value; }
+        public int Id_actividad { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public Boolean Borrado { get; set; }
 
         public override string ToString()
         {

@@ -24,7 +24,7 @@ namespace BugTracker
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Configuramos el frmPrincipal para que inicie con la aplicacion.
-            Application.Run(new frmConsultarProgreso());
+            Application.Run(new frmPrincipal());
         }
     }
 }

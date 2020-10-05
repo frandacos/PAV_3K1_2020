@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace BugTracker.GUILayer.Usuarios_Curso
 {
+    
     public partial class frmUsuarioCurso : Form
     {
         private UsuariosCursoService oUsuariosCursoService;
@@ -26,7 +27,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
             oUsuarioService = new UsuarioService();
             
         }
-
+        
         private void frmUsuarioCurso_Load(object sender, EventArgs e)
         {
             this.CenterToParent();

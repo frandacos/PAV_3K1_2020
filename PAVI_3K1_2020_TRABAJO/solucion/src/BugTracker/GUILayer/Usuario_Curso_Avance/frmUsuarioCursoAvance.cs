@@ -20,11 +20,12 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         private UsuarioCursoAvance oUsuarioCursoAvance;
         public int idCurso;
         public int idUsuario;
+        private UsuarioCursoAvance oUsuarioCursoAvanceSelected;
 
         public frmUsuarioCursoAvance()
         {
             InitializeComponent();
-            InitializeDataGridView();
+            //InitializeDataGridView();
             this.idCurso = idCurso;
             this.idUsuario = idUsuario;
             oUsuarioCursoAvanceService = new UsuarioCursoAvanceService();
@@ -62,8 +63,9 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             // Definimos el ancho de la columna.
 
             dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
-            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion1";
+            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion";
 
+            
             dgvUsuarioCursoAvance.Columns[2].Name = "Finalizado";
             dgvUsuarioCursoAvance.Columns[2].DataPropertyName = "Finalizado";
 
@@ -105,7 +107,33 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
 
             dgvUsuarioCursoAvance.DataSource = oUsuarioCursoAvanceService.ConsultarConFiltrosSinParametros(condiciones);
 
+            int filas_totales = dgvUsuarioCursoAvance.RowCount;
+
             
+            
+            
+
+            //for (int i = 0; i <= filas_totales; i++)
+            //{
+            //    if (dgvUsuarioCursoAvance.CurrentRow[i].Cells[2].Value.ToString() == "True")
+            //        count += 1;
+
+            //}
+
+
+            //label2.Text = dgvUsuarioCursoAvance.CurrentRow.Cells[1].Value.ToString();
+            int filas_true = 3;
+            decimal total = (filas_true*100)/filas_totales;
+            label2.Text = Convert.ToString(total) + '%';
+            int total2 = Convert.ToInt32(total);
+            pbrPorcentaje.Value = total2;
+            //oUsuarioCursoAvanceService.ActividadesRealizadas();
+
+
+
+
+
+
         }
 
         private void pgreBar_Click(object sender, EventArgs e)
@@ -121,30 +149,18 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             var actividad = (UsuarioCursoAvance)dgvUsuarioCursoAvance.CurrentRow.DataBoundItem;
-            //var id_actividad = dgvUsuarioCursoAvance.CurrentCell.Value.ToString();
-            String condicioness = "";
-            condicioness += " AND UCA.id_curso=" + idCurso;
-            condicioness += " AND UCA.id_usuario=" + idUsuario;
-            condicioness += " AND UCA.id_actividad=" + (actividad.Actividad.Id_actividad);
-            
-            
-            //if (oUsuarioCursoAvance.RegistrarActividad(condicioness))
-            //{
 
-            //    MessageBox.Show("Actividad registrada!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    this.Close();
-            //}
-            
+            var id_usuario = actividad.Usuario.IdUsuario;
+            var id_curso = actividad.Curso.Id_curso;
+            var id_actividad = actividad.Actividad.Id_actividad;
+            int resultado = 0;
+
+            oUsuarioCursoAvanceService.ActualizarActUsuarioCursoAvance(id_usuario, id_curso, id_actividad);
+            //resultado = oUsuarioCursoAvanceService.UsuariosTrue(id_usuario, id_curso);
+           
             frmUsuarioCursoAvance_Load(sender, e);
-            btnNuevo.Enabled = false;
-            MessageBox.Show("Se debe ingresar un usuario.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-
-
-
-
-
-
+            btnNuevo.Enabled = true;
+            
 
             //oUsuarioCursoAvance.Fin = DateTime.Today;
 
@@ -152,15 +168,19 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
 
         }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
+       
+
+        private void dgvUsuarioCursoAvance_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            btnNuevo.Enabled = true;
-            btnFinalizar.Enabled = false;
-            btnNuevo.Focus();
 
         }
 
-        private void dgvUsuarioCursoAvance_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPorcentaje_TextChanged(object sender, EventArgs e)
         {
 
         }

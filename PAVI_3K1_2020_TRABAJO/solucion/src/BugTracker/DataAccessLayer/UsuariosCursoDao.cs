@@ -190,7 +190,6 @@ namespace BugTracker.DataAccessLayer
 
                 dm.EjecutarSQL(sql);
 
-                dm.Commit();
             }
 
             catch (Exception ex)
@@ -223,8 +222,12 @@ namespace BugTracker.DataAccessLayer
                                 " fecha_inicio= " + "'" + oUsuariosCurso.Fecha_inicio.ToString("yyyy-MM-dd") + "'," +
                                 " fecha_fin= " + "'" + oUsuariosCurso.Fecha_fin.ToString("yyyy-MM-dd") + "'" +
                                 " WHERE id_usuario=" + oUsuariosCurso.Usuario.IdUsuario + " AND id_curso=" + oUsuariosCurso.Curso.Id_curso + " AND  borrado=0";
-                //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
+
                 dm.EjecutarSQL(str_sql);
+
+                
+                //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
+
                 dm.Commit();
             }
 
@@ -255,6 +258,14 @@ namespace BugTracker.DataAccessLayer
 
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql) == 1);
                 dm.EjecutarSQL(str_sql);
+
+                string sql = "UPDATE UsuariosCursoAvance" +
+                                " SET " +
+                                " borrado = 1 " +
+                                " WHERE id_usuario=" + oUsuariosCurso.Usuario.IdUsuario + " AND id_curso=" + oUsuariosCurso.Curso.Id_curso + " AND  borrado=0";
+
+                var resultado = dm.EjecutarSQL(sql);
+
                 dm.Commit();
             }
 

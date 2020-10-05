@@ -96,7 +96,7 @@ namespace BugTracker.DataAccessLayer
                 {
                     Id_actividad = Convert.ToInt32(row["id_actividad"].ToString()),
                     Nombre = row["Nombre_actividad"].ToString(),
-                    Descripcion1 = row["Descripcion_actividad"].ToString()
+                    Descripcion = row["Descripcion_actividad"].ToString()
                 },
              
                 Finalizado = Convert.ToBoolean(row["finalizado"].ToString()),
@@ -104,6 +104,78 @@ namespace BugTracker.DataAccessLayer
             };
             return oUsuarioCursoAvance;
         }
+
+        internal bool UpdateActividad(int id_usuario, int id_curso, int id_actividad)
+        {
+            //SIN PARAMETROS
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+
+
+                string str_sql = "UPDATE UsuariosCursoAvance" +
+                                " SET " +
+                                " finalizado = 1" +
+                                " WHERE id_usuario=" + id_usuario + " AND id_curso=" + id_curso + " AND id_actividad =" + id_actividad + "AND borrado=0";
+                //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
+
+                dm.EjecutarSQL(str_sql);
+
+                
+
+                dm.Commit();
+            }
+
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                // Cierra la conexión 
+                dm.Close();
+            }
+            return true;
+        }
+
+        //internal int ConsultarUsuariosTrue(int id_usuario, int id_curso)
+        //{
+            
+        //    //SIN PARAMETROS
+        //    DataManager dm = new DataManager();
+        //    int contar;
+        //    try
+        //    {
+        //        dm.Open();
+        //        dm.BeginTransaction();
+
+
+        //        string str_sql = "SELECT COUNT(finalizado) FROM UsuariosCursoAvance WHERE id_curso = " + id_curso + " AND id_usuario = " + id_usuario + " AND finalizado = 1 AND borrado = 0";
+        //        //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
+
+        //        contar = dm.EjecutarSQL(str_sql);
+                
+
+        //        dm.Commit();
+                
+        //    }
+
+        //    catch (Exception ex)
+        //    {
+        //        dm.Rollback();
+        //        throw ex;
+        //    }
+        //    finally
+        //    {
+        //        // Cierra la conexión 
+        //        dm.Close();
+        //    }
+        //    return contar;
+        //}
+
     }
 
 }

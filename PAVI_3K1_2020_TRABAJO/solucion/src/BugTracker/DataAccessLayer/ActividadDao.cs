@@ -94,7 +94,7 @@ namespace BugTracker.DataAccessLayer
             {
                 Id_actividad = Convert.ToInt32(row["id_actividad"].ToString()),
                 Nombre = row["nombre"].ToString(),
-                Descripcion1 = row["descripcion"].ToString(),
+                Descripcion = row["descripcion"].ToString(),
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
 
@@ -114,7 +114,7 @@ namespace BugTracker.DataAccessLayer
                 string str_sql = "INSERT INTO Actividades (nombre, descripcion, borrado)" +
                             " VALUES (" +
                             "'" + oActividad.Nombre + "'" + "," +
-                            "'" + oActividad.Descripcion1 + "'" + "," +
+                            "'" + oActividad.Descripcion + "'" + "," +
                              "0)";
 
 
@@ -146,7 +146,7 @@ namespace BugTracker.DataAccessLayer
                 dm.BeginTransaction();
                 string str_sql = "UPDATE Actividades " +
                              "SET nombre=" + "'" + oActividad.Nombre + "'" + "," +
-                             " descripcion=" + "'" + oActividad.Descripcion1 + "'" +
+                             " descripcion=" + "'" + oActividad.Descripcion + "'" +
                              " WHERE id_actividad=" + oActividad.Id_actividad + " AND  borrado=0";
 
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
