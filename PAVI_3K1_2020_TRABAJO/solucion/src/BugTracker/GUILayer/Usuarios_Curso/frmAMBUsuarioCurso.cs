@@ -160,9 +160,9 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                                 if (oUsuariosCursoService.CrearUsuarioCurso(oUsuarioCurso))
                                 {
                                     MessageBox.Show("Usuario en curso insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                                                   
-                                    //frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance((int)cboCurso.SelectedValue, (int)cboUsuario.SelectedValue);
-                                    //avance.ShowDialog();
+
+                                    frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance((int)cboCurso.SelectedValue, (int)cboUsuario.SelectedValue);
+                                    avance.ShowDialog();
                                     this.Close();
                                     
                                     

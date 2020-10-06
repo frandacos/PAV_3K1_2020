@@ -167,29 +167,30 @@ namespace BugTracker.DataAccessLayer
             {
                 dm.Open();
                 dm.BeginTransaction();
-              
+
                 string str_sql = "INSERT INTO UsuariosCurso (id_usuario, id_curso, puntuacion, observaciones,fecha_inicio,fecha_fin, borrado)" +
                             " VALUES (" +
-                                 "'"+ oUsuariosCurso.Usuario.IdUsuario + "'," 
-                               + "'" + oUsuariosCurso.Curso.Id_curso + "'," 
-                               + "'" + oUsuariosCurso.Puntuacion +  "'," 
-                               + "'" + oUsuariosCurso.Observaciones + "'" + "," 
+                                 "'" + oUsuariosCurso.Usuario.IdUsuario + "',"
+                               + "'" + oUsuariosCurso.Curso.Id_curso + "',"
+                               + "'" + oUsuariosCurso.Puntuacion + "',"
+                               + "'" + oUsuariosCurso.Observaciones + "'" + ","
                                + "'" + oUsuariosCurso.Fecha_inicio.ToString("yyyy-MM-dd") + "',"
                                + "NULL, 0) ";
-                            
+
 
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
                 dm.EjecutarSQL(str_sql);
 
-                //string sql = "INSERT INTO UsuariosCursoAvance (id_usuario, id_curso, id_actividad, porc_avance, finalizado, borrado) " +
-                //             " SELECT uc.id_usuario, uc.id_curso, ac.id_actividad, ac.porc_de_avance, ac.borrado , ac.borrado" +
-                //             " FROM UsuariosCurso uc INNER JOIN ActividadesXCurso ac ON " +
-                //             " (uc.id_curso=ac.id_curso)" +
-                //             " WHERE uc.id_usuario =" + oUsuariosCurso.Usuario.IdUsuario +
-                //             " AND uc.id_curso =" + oUsuariosCurso.Curso.Id_curso;
+                string sql = "INSERT INTO UsuariosCursoAvance (id_usuario, id_curso, id_actividad, porc_avance, finalizado, borrado) " +
+                             " SELECT uc.id_usuario, uc.id_curso, ac.id_actividad, ac.porc_de_avance, ac.borrado , ac.borrado" +
+                             " FROM UsuariosCurso uc INNER JOIN ActividadesXCurso ac ON " +
+                             " (uc.id_curso=ac.id_curso)" +
+                             " WHERE uc.id_usuario =" + oUsuariosCurso.Usuario.IdUsuario +
+                             " AND uc.id_curso =" + oUsuariosCurso.Curso.Id_curso;
 
-                //dm.EjecutarSQL(sql);
+                dm.EjecutarSQL(sql);
 
+                dm.Commit();
             }
 
             catch (Exception ex)
