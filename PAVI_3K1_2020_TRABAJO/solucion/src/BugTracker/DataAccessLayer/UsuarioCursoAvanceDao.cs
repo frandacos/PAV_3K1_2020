@@ -61,7 +61,7 @@ namespace BugTracker.DataAccessLayer
                 " FROM UsuariosCursoAvance UCA INNER JOIN Usuarios U ON (UCA.id_usuario=U.id_usuario) " +
                 " INNER JOIN Cursos C ON (UCA.id_curso = C.id_curso)" +
                 " INNER JOIN Actividades A ON (UCA.id_actividad = A.id_actividad)" +
-                " WHERE UCA.borrado=0";
+                " WHERE UCA.borrado=0 ";
 
 
 
@@ -122,6 +122,47 @@ namespace BugTracker.DataAccessLayer
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
 
                 dm.EjecutarSQL(str_sql);
+                dm.Commit();
+            }
+
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                // Cierra la conexión 
+                dm.Close();
+            }
+            return true;
+        }
+
+        internal bool UpdateFechaFin(int idCurso,int idUsuario)
+        {
+            //SIN PARAMETROS
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+
+
+                string str_sql = "UPDATE UsuariosCurso" +
+                                " SET " +
+                                " fecha_fin = GETDATE()" +
+                                " WHERE id_usuario=" + idUsuario+ " AND id_curso=" + idCurso + "AND borrado=0";
+                //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
+
+                dm.EjecutarSQL(str_sql);
+
+                string sql = "UPDATE UsuariosCursoAvance" +
+                                " SET " +
+                                " borrado = 1 " +
+                                " WHERE id_usuario=" + idUsuario + " AND id_curso=" + idCurso + " AND  borrado=0";
+
+                dm.EjecutarSQL(sql);
+
                 dm.Commit();
             }
 

@@ -30,6 +30,13 @@ namespace BugTracker.BusinessLayer
         {
             return oUsuarioCursoAvanceDao.UpdateActividad(id_usuario, id_curso, id_actividad);
         }
+
+        internal bool ActualizarFechaFin(int idCurso,int idUsuario)
+        {
+            return oUsuarioCursoAvanceDao.UpdateFechaFin(idCurso, idUsuario);
+        }
+
+
     }
 }
 

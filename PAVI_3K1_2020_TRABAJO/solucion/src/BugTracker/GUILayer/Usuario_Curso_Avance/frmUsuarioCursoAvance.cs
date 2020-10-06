@@ -135,6 +135,12 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             pbrPorcentaje.Value = total2;
             //oUsuarioCursoAvanceService.ActividadesRealizadas();
 
+            if (filas_totales == filas_true)
+            {
+                oUsuarioCursoAvanceService.ActualizarFechaFin(idCurso,idUsuario);
+                MessageBox.Show("Curso finalizado con exito!");
+                this.Close();
+            }
         }
 
         private void pgreBar_Click(object sender, EventArgs e)

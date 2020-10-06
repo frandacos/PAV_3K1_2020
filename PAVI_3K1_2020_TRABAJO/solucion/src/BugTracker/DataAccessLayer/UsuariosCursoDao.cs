@@ -181,14 +181,14 @@ namespace BugTracker.DataAccessLayer
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
                 dm.EjecutarSQL(str_sql);
 
-                string sql = "INSERT INTO UsuariosCursoAvance (id_usuario, id_curso, id_actividad, porc_avance, finalizado, borrado) " +
-                             " SELECT uc.id_usuario, uc.id_curso, ac.id_actividad, ac.porc_de_avance, ac.borrado , ac.borrado" +
-                             " FROM UsuariosCurso uc INNER JOIN ActividadesXCurso ac ON " +
-                             " (uc.id_curso=ac.id_curso)" +
-                             " WHERE uc.id_usuario =" + oUsuariosCurso.Usuario.IdUsuario +
-                             " AND uc.id_curso =" + oUsuariosCurso.Curso.Id_curso;
+                //string sql = "INSERT INTO UsuariosCursoAvance (id_usuario, id_curso, id_actividad, porc_avance, finalizado, borrado) " +
+                //             " SELECT uc.id_usuario, uc.id_curso, ac.id_actividad, ac.porc_de_avance, ac.borrado , ac.borrado" +
+                //             " FROM UsuariosCurso uc INNER JOIN ActividadesXCurso ac ON " +
+                //             " (uc.id_curso=ac.id_curso)" +
+                //             " WHERE uc.id_usuario =" + oUsuariosCurso.Usuario.IdUsuario +
+                //             " AND uc.id_curso =" + oUsuariosCurso.Curso.Id_curso;
 
-                dm.EjecutarSQL(sql);
+                //dm.EjecutarSQL(sql);
 
             }
 
@@ -264,7 +264,7 @@ namespace BugTracker.DataAccessLayer
                                 " borrado = 1 " +
                                 " WHERE id_usuario=" + oUsuariosCurso.Usuario.IdUsuario + " AND id_curso=" + oUsuariosCurso.Curso.Id_curso + " AND  borrado=0";
 
-                var resultado = dm.EjecutarSQL(sql);
+                dm.EjecutarSQL(sql);
 
                 dm.Commit();
             }
