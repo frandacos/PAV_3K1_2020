@@ -202,7 +202,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmUsuarioCurso";
-            this.Text = "Usuario Curso";
+            this.Text = "Usuarios regitrados y activos en Cursos ";
             this.Load += new System.EventHandler(this.frmUsuarioCurso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarioCurso)).EndInit();
             this.UsuarioCurso.ResumeLayout(false);

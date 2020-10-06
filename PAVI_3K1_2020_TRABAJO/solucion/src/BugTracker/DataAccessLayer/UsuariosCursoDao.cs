@@ -45,7 +45,9 @@ namespace BugTracker.DataAccessLayer
                 Puntuacion = Convert.ToInt32(row["puntuacion"].ToString()),
                 Observaciones = row["observaciones"].ToString(),
                 Fecha_inicio = Convert.ToDateTime(row["fecha_inicio"]),
+                
                 Fecha_fin = DateTime.Now,
+                //Fecha_fin= Convert.ToDateTime(row["fecha_fin"]),
                 Borrado = Convert.ToBoolean(row["borrado"].ToString()),
                 Usuario = new Usuario()
                 {

@@ -56,6 +56,8 @@ namespace BugTracker.GUILayer.Usuarios_Curso
 
                 case FormMode.update:
                     {
+                        dtpFecha_fin.Hide();
+                        lblFecha_Fin.Hide();
                         this.Text = "Actualizar datos Usuario-Curso";
                         // Recuperar usuario seleccionado en la grilla 
                         MostrarDatos();
@@ -64,7 +66,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                         txtPuntuacion.Enabled = true;
                         txtObservaciones.Enabled = true;
                         dtpFechaInicio.Enabled = true;
-                        dtpFecha_fin.Enabled = true;
+                        //dtpFecha_fin.Enabled = true;
                         break;
                     }
 
@@ -114,6 +116,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
 
         private bool ValidarCampos()
         {
+            int numero;
             // campos obligatorios
             if (cboCurso.Text == string.Empty)
             {
@@ -131,8 +134,20 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                 return false;
             }
 
+
+            if (txtPuntuacion.Text == "" && !(Int32.TryParse(txtPuntuacion.Text, out numero)))
+            {
+                txtPuntuacion.BackColor = Color.Red;
+                txtPuntuacion.Focus();
+                return false;
+            }
+
             return true;
+
+            
         }
+
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -146,28 +161,39 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                     {
                         if (ExisteUsuarioEnCurso() == false)
                         {
-                                
-                                var oUsuarioCurso = new UsuariosCurso();
-                                oUsuarioCurso.Curso = new Curso();
-                                oUsuarioCurso.Curso.Id_curso = (int)cboCurso.SelectedValue ;
-                                oUsuarioCurso.Usuario = new Usuario();
-                                oUsuarioCurso.Usuario.IdUsuario = (int)cboUsuario.SelectedValue;
-                           
-                                oUsuarioCurso.Puntuacion = Convert.ToInt32(txtPuntuacion.Text.ToString());
-                                oUsuarioCurso.Observaciones = txtObservaciones.Text;
-                                oUsuarioCurso.Fecha_inicio =dtpFechaInicio.Value;
-                                                                
-                                if (oUsuariosCursoService.CrearUsuarioCurso(oUsuarioCurso))
+                                int numero;
+                                if (txtPuntuacion.Text != "" && (Int32.TryParse(txtPuntuacion.Text, out numero)))
                                 {
-                                    MessageBox.Show("Usuario en curso insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    var oUsuarioCurso = new UsuariosCurso();
+                                    oUsuarioCurso.Curso = new Curso();
+                                    oUsuarioCurso.Curso.Id_curso = (int)cboCurso.SelectedValue;
+                                    oUsuarioCurso.Usuario = new Usuario();
+                                    oUsuarioCurso.Usuario.IdUsuario = (int)cboUsuario.SelectedValue;
 
-                                    frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance((int)cboCurso.SelectedValue, (int)cboUsuario.SelectedValue);
-                                    avance.ShowDialog();
-                                    this.Close();
-                                    
-                                    
+                                    oUsuarioCurso.Puntuacion = Convert.ToInt32(txtPuntuacion.Text.ToString());
+                                    oUsuarioCurso.Observaciones = txtObservaciones.Text;
+                                    oUsuarioCurso.Fecha_inicio = dtpFechaInicio.Value;
+
+                                    if (oUsuariosCursoService.CrearUsuarioCurso(oUsuarioCurso))
+                                    {
+                                        MessageBox.Show("Usuario en curso insertado!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                        frmUsuarioCursoAvance avance = new frmUsuarioCursoAvance((int)cboCurso.SelectedValue, (int)cboUsuario.SelectedValue);
+                                        avance.ShowDialog();
+                                        this.Close();
+
+
+                                    }
                                 }
-                            
+                                else
+                                {
+                                    txtPuntuacion.BackColor = Color.Red;
+                                    txtPuntuacion.Focus();
+                                    MessageBox.Show("Falta ingresar una puntuación (debe ser numérica)!!");
+
+
+                            }
+
                         }
                     
                         else
@@ -178,7 +204,8 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                 case FormMode.update:
                     {
                         if (ValidarCampos())
-                        {                                                      
+                        {
+                        
                             oUsuarioCursoSelected.Usuario.IdUsuario = (int)cboUsuario.SelectedValue;
                             oUsuarioCursoSelected.Curso.Id_curso = (int)cboCurso.SelectedValue;
                             oUsuarioCursoSelected.Puntuacion = Convert.ToInt32(txtPuntuacion.Text.ToString());

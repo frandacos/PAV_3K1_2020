@@ -150,7 +150,8 @@ namespace BugTracker.DataAccessLayer
 
                 string str_sql = "UPDATE UsuariosCurso" +
                                 " SET " +
-                                " fecha_fin = GETDATE()" +
+                                " fecha_fin = GETDATE()," +
+                                " borrado = 1 " +
                                 " WHERE id_usuario=" + idUsuario+ " AND id_curso=" + idCurso + "AND borrado=0";
                 //return (DBHelper.GetDBHelper().EjecutarSQL(str_sql)==1);
 
