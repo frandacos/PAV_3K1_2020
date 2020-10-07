@@ -67,6 +67,7 @@ namespace BugTracker.GUILayer.Actividades
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             String condiciones = "";
+
             var filters = new Dictionary<string, object>();
 
             if (!chkTodos.Checked)
@@ -93,18 +94,21 @@ namespace BugTracker.GUILayer.Actividades
                 }
                 else
                     MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
             }
             else
+            {
                 //selecciono el checkbox(todos)
                 dgvActividades.DataSource = oActividadService.ObtenerTodos();
-
+                habilitar();
+            }
         }
 
-        private void habilitar(bool x)
+        private void habilitar()
         {
-            btnEditar.Enabled = !x;
-            btnNuevo.Enabled = !x;
-            btnQuitar.Enabled = !x;
+            btnEditar.Enabled = true;
+            btnQuitar.Enabled = true;
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -152,6 +156,17 @@ namespace BugTracker.GUILayer.Actividades
         private void dgvActividades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pnlFiltros_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmActividades_Load(object sender, EventArgs e)
+        {
+            btnEditar.Enabled = false;
+            btnQuitar.Enabled = false;
         }
     }
 }

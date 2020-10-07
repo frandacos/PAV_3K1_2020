@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategorias));
             this.btnQuitar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Image = global::BugTracker.Properties.Resources.eliminar;
+            this.btnQuitar.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.Image")));
             this.btnQuitar.Location = new System.Drawing.Point(200, 627);
             this.btnQuitar.Margin = new System.Windows.Forms.Padding(6);
             this.btnQuitar.Name = "btnQuitar";
@@ -55,7 +56,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Image = global::BugTracker.Properties.Resources.salir;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.Location = new System.Drawing.Point(760, 627);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
@@ -66,7 +67,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Image = global::BugTracker.Properties.Resources.editar;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.Location = new System.Drawing.Point(108, 627);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEditar.Name = "btnEditar";
@@ -77,7 +78,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Image = global::BugTracker.Properties.Resources.agregar;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.Location = new System.Drawing.Point(16, 627);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(6);
             this.btnNuevo.Name = "btnNuevo";

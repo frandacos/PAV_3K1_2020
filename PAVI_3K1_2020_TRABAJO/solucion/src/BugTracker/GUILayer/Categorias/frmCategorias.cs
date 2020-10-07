@@ -97,8 +97,11 @@ namespace BugTracker.GUILayer.Categorias
                     MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
+            {
                 //selecciono el checkbox(todos)
                 dgvCategorias.DataSource = oCategoriaService.ObtenerTodos();
+                habilitar();
+            }
 
         }
 
@@ -116,11 +119,10 @@ namespace BugTracker.GUILayer.Categorias
             //frmCategorias_Load_1(sender, e);
         }
 
-        private void habilitar(bool x)
+        private void habilitar()
         {
-            btnEditar.Enabled = !x;
-            btnNuevo.Enabled = !x;
-            btnQuitar.Enabled = !x;
+            btnEditar.Enabled = true;
+            btnQuitar.Enabled = true;
         }
 
         private void frmCategorias_Load_1(object sender, EventArgs e)
@@ -182,7 +184,8 @@ namespace BugTracker.GUILayer.Categorias
 
         private void frmCategorias_Load(object sender, EventArgs e)
         {
-
+            btnEditar.Enabled = false;
+            btnQuitar.Enabled = false;
         }
     }
 

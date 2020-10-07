@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActividades));
             this.pnlFiltros = new System.Windows.Forms.GroupBox();
             this.dgvActividades = new System.Windows.Forms.DataGridView();
             this.chkTodos = new System.Windows.Forms.CheckBox();
@@ -45,6 +46,7 @@
             // pnlFiltros
             // 
             this.pnlFiltros.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlFiltros.BackColor = System.Drawing.SystemColors.Window;
             this.pnlFiltros.Controls.Add(this.dgvActividades);
             this.pnlFiltros.Controls.Add(this.chkTodos);
             this.pnlFiltros.Controls.Add(this.Label3);
@@ -58,11 +60,13 @@
             this.pnlFiltros.TabIndex = 38;
             this.pnlFiltros.TabStop = false;
             this.pnlFiltros.Text = "Actividades";
+            this.pnlFiltros.Enter += new System.EventHandler(this.pnlFiltros_Enter);
             // 
             // dgvActividades
             // 
             this.dgvActividades.AllowUserToAddRows = false;
             this.dgvActividades.AllowUserToDeleteRows = false;
+            this.dgvActividades.BackgroundColor = System.Drawing.SystemColors.ButtonShadow;
             this.dgvActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvActividades.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvActividades.Location = new System.Drawing.Point(6, 198);
@@ -118,7 +122,7 @@
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Image = global::BugTracker.Properties.Resources.eliminar;
+            this.btnQuitar.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.Image")));
             this.btnQuitar.Location = new System.Drawing.Point(200, 627);
             this.btnQuitar.Margin = new System.Windows.Forms.Padding(6);
             this.btnQuitar.Name = "btnQuitar";
@@ -129,7 +133,7 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Image = global::BugTracker.Properties.Resources.salir;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.Location = new System.Drawing.Point(760, 627);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
@@ -140,7 +144,7 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Image = global::BugTracker.Properties.Resources.editar;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.Location = new System.Drawing.Point(108, 627);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEditar.Name = "btnEditar";
@@ -151,7 +155,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Image = global::BugTracker.Properties.Resources.agregar;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.Location = new System.Drawing.Point(16, 627);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(6);
             this.btnNuevo.Name = "btnNuevo";
@@ -173,6 +177,7 @@
             this.Name = "frmActividades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actividades";
+            this.Load += new System.EventHandler(this.frmActividades_Load);
             this.pnlFiltros.ResumeLayout(false);
             this.pnlFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActividades)).EndInit();

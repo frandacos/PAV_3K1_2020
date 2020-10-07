@@ -40,32 +40,14 @@ namespace BugTracker.GUILayer
                 e.Cancel = true;
         }
 
-        private void consultarBugsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmConsultaBugs frmDetalle = new frmConsultaBugs();
-            frmDetalle.ShowDialog();
-        }
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void cursosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCursos frmDetalle = new frmCursos();
-            frmDetalle.ShowDialog();
-        }
-
         private void archivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmUsuarios frmDetalle = new frmUsuarios();
-            frmDetalle.ShowDialog();
         }
 
         private void usuariosPorCursoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,32 +56,49 @@ namespace BugTracker.GUILayer
             frmUsCurso.ShowDialog();
         }
 
-        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCategorias frmDetalle = new frmCategorias();
-            frmDetalle.ShowDialog();
-        }
-
-        private void actividadesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmActividades frmDetalle = new frmActividades();
-            frmDetalle.ShowDialog();
-        }
-
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void objetivosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmObjetivos frmDetalle = new frmObjetivos();
-            frmDetalle.ShowDialog();
-        }
-
         private void consultarProgresoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConsultarProgreso frmDetalle = new frmConsultarProgreso();
+            frmDetalle.ShowDialog();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmUsuarios frmDetalle = new frmUsuarios();
+            frmDetalle.ShowDialog();
+        }
+
+        private void cursosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCursos frmDetalle = new frmCursos();
+            frmDetalle.ShowDialog();
+        }
+
+        private void actividadesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmActividades frmDetalle = new frmActividades();
+            frmDetalle.ShowDialog();
+        }
+
+        private void categoriasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCategorias frmDetalle = new frmCategorias();
+            frmDetalle.ShowDialog();
+        }
+
+        private void objetivosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmObjetivos frmDetalle = new frmObjetivos();
             frmDetalle.ShowDialog();
         }
     }
