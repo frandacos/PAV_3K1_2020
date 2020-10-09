@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarioCurso));
             this.lblN_Curso = new System.Windows.Forms.Label();
             this.lblN_Usuario = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
@@ -66,10 +67,10 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(331, 35);
+            this.btnConsultar.Location = new System.Drawing.Point(329, 35);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(6);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(85, 48);
+            this.btnConsultar.Size = new System.Drawing.Size(85, 41);
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -91,7 +92,9 @@
             // 
             this.dgvUsuarioCurso.AllowUserToAddRows = false;
             this.dgvUsuarioCurso.AllowUserToDeleteRows = false;
+            this.dgvUsuarioCurso.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.dgvUsuarioCurso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarioCurso.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgvUsuarioCurso.Location = new System.Drawing.Point(0, 125);
             this.dgvUsuarioCurso.Margin = new System.Windows.Forms.Padding(6);
             this.dgvUsuarioCurso.MultiSelect = false;
@@ -144,7 +147,7 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Image = global::BugTracker.Properties.Resources.agregar;
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.Location = new System.Drawing.Point(15, 336);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(6);
             this.btnNuevo.Name = "btnNuevo";
@@ -156,7 +159,7 @@
             // btnEditar
             // 
             this.btnEditar.Enabled = false;
-            this.btnEditar.Image = global::BugTracker.Properties.Resources.editar;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.Location = new System.Drawing.Point(67, 336);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
             this.btnEditar.Name = "btnEditar";
@@ -168,7 +171,7 @@
             // btnQuitar
             // 
             this.btnQuitar.Enabled = false;
-            this.btnQuitar.Image = global::BugTracker.Properties.Resources.eliminar;
+            this.btnQuitar.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.Image")));
             this.btnQuitar.Location = new System.Drawing.Point(119, 336);
             this.btnQuitar.Margin = new System.Windows.Forms.Padding(6);
             this.btnQuitar.Name = "btnQuitar";
@@ -179,13 +182,14 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Image = global::BugTracker.Properties.Resources.salir;
+            this.btnSalir.BackColor = System.Drawing.SystemColors.Control;
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.Location = new System.Drawing.Point(389, 336);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(6);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.TabIndex = 13;
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmUsuarioCurso

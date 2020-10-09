@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObjetivos));
             this.lblNombre_corto = new System.Windows.Forms.Label();
             this.lblNombre_largo = new System.Windows.Forms.Label();
             this.txtNombre_corto = new System.Windows.Forms.TextBox();
@@ -45,46 +46,41 @@
             // lblNombre_corto
             // 
             this.lblNombre_corto.AutoSize = true;
-            this.lblNombre_corto.Location = new System.Drawing.Point(40, 36);
-            this.lblNombre_corto.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblNombre_corto.Location = new System.Drawing.Point(20, 19);
             this.lblNombre_corto.Name = "lblNombre_corto";
-            this.lblNombre_corto.Size = new System.Drawing.Size(141, 25);
+            this.lblNombre_corto.Size = new System.Drawing.Size(71, 13);
             this.lblNombre_corto.TabIndex = 0;
             this.lblNombre_corto.Text = "Nombre corto";
             // 
             // lblNombre_largo
             // 
             this.lblNombre_largo.AutoSize = true;
-            this.lblNombre_largo.Location = new System.Drawing.Point(42, 94);
-            this.lblNombre_largo.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lblNombre_largo.Location = new System.Drawing.Point(21, 49);
             this.lblNombre_largo.Name = "lblNombre_largo";
-            this.lblNombre_largo.Size = new System.Drawing.Size(141, 25);
+            this.lblNombre_largo.Size = new System.Drawing.Size(70, 13);
             this.lblNombre_largo.TabIndex = 1;
             this.lblNombre_largo.Text = "Nombre largo";
             // 
             // txtNombre_corto
             // 
-            this.txtNombre_corto.Location = new System.Drawing.Point(214, 30);
-            this.txtNombre_corto.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombre_corto.Location = new System.Drawing.Point(107, 16);
             this.txtNombre_corto.Name = "txtNombre_corto";
-            this.txtNombre_corto.Size = new System.Drawing.Size(364, 31);
+            this.txtNombre_corto.Size = new System.Drawing.Size(184, 20);
             this.txtNombre_corto.TabIndex = 2;
             // 
             // txtNombre_largo
             // 
-            this.txtNombre_largo.Location = new System.Drawing.Point(214, 88);
-            this.txtNombre_largo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNombre_largo.Location = new System.Drawing.Point(107, 46);
             this.txtNombre_largo.Name = "txtNombre_largo";
-            this.txtNombre_largo.Size = new System.Drawing.Size(364, 31);
+            this.txtNombre_largo.Size = new System.Drawing.Size(184, 20);
             this.txtNombre_largo.TabIndex = 3;
             // 
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(214, 148);
-            this.chkTodos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.chkTodos.Location = new System.Drawing.Point(107, 77);
             this.chkTodos.Name = "chkTodos";
-            this.chkTodos.Size = new System.Drawing.Size(104, 29);
+            this.chkTodos.Size = new System.Drawing.Size(56, 17);
             this.chkTodos.TabIndex = 4;
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = true;
@@ -93,19 +89,17 @@
             // dgvObjetivos
             // 
             this.dgvObjetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvObjetivos.Location = new System.Drawing.Point(17, 210);
-            this.dgvObjetivos.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgvObjetivos.Location = new System.Drawing.Point(8, 109);
             this.dgvObjetivos.Name = "dgvObjetivos";
             this.dgvObjetivos.RowHeadersWidth = 82;
-            this.dgvObjetivos.Size = new System.Drawing.Size(814, 398);
+            this.dgvObjetivos.Size = new System.Drawing.Size(407, 207);
             this.dgvObjetivos.TabIndex = 5;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(634, 36);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnConsultar.Location = new System.Drawing.Point(317, 19);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(174, 85);
+            this.btnConsultar.Size = new System.Drawing.Size(87, 44);
             this.btnConsultar.TabIndex = 6;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -113,53 +107,49 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Image = global::BugTracker.Properties.Resources.agregar;
-            this.btnNuevo.Location = new System.Drawing.Point(15, 624);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.Location = new System.Drawing.Point(8, 324);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(80, 77);
+            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
             this.btnNuevo.TabIndex = 7;
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Image = global::BugTracker.Properties.Resources.editar;
-            this.btnEditar.Location = new System.Drawing.Point(107, 624);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(54, 324);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(80, 77);
+            this.btnEditar.Size = new System.Drawing.Size(40, 40);
             this.btnEditar.TabIndex = 8;
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnQuitar
             // 
-            this.btnQuitar.Image = global::BugTracker.Properties.Resources.eliminar;
-            this.btnQuitar.Location = new System.Drawing.Point(199, 624);
-            this.btnQuitar.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnQuitar.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.Image")));
+            this.btnQuitar.Location = new System.Drawing.Point(100, 324);
             this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(80, 77);
+            this.btnQuitar.Size = new System.Drawing.Size(40, 40);
             this.btnQuitar.TabIndex = 9;
             this.btnQuitar.UseVisualStyleBackColor = true;
             this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Image = global::BugTracker.Properties.Resources.salir;
-            this.btnSalir.Location = new System.Drawing.Point(759, 624);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(380, 324);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(80, 77);
+            this.btnSalir.Size = new System.Drawing.Size(40, 40);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmObjetivos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 716);
+            this.ClientSize = new System.Drawing.Size(427, 372);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnEditar);
@@ -171,7 +161,6 @@
             this.Controls.Add(this.txtNombre_corto);
             this.Controls.Add(this.lblNombre_largo);
             this.Controls.Add(this.lblNombre_corto);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "frmObjetivos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Objetivos";

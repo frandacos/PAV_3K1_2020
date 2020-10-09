@@ -20,6 +20,7 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         private UsuarioCursoAvance oUsuarioCursoAvance;
         public int idCurso;
         public int idUsuario;
+        public static Actividad ;
         private UsuarioCursoAvance oUsuarioCursoAvanceSelected;
        
        
@@ -66,7 +67,6 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
             dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion";
 
-            
             dgvUsuarioCursoAvance.Columns[2].Name = "Finalizado";
             dgvUsuarioCursoAvance.Columns[2].DataPropertyName = "Finalizado";
 

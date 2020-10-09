@@ -42,21 +42,11 @@ namespace BugTracker.Cursos
             cbo.SelectedIndex = -1;
         }
 
-       
-        
-
-       
-
-       
-        
-
-        
 
         private void habilitar(bool x)
         {
-            btnEditar.Enabled = !x;
-            btnNuevo.Enabled = !x;
-            btnQuitar.Enabled = !x;
+            btnEditar.Enabled = x;
+            btnQuitar.Enabled = x;
         }
 
        
@@ -149,8 +139,11 @@ namespace BugTracker.Cursos
                     MessageBox.Show("Debe ingresar al menos un criterio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
+            {
                 //selecciono el checkbox(todos)
                 dgvCursos.DataSource = oCursoService.ObtenerTodos();
+                //habilitar(true);
+            }
 
         }
 
