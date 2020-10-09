@@ -31,5 +31,6 @@ namespace BugTracker.Entities
         {
             return Curso.Nombre;
         }
+        
     }
 }

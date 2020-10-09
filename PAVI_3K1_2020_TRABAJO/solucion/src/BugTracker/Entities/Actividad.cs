@@ -16,6 +16,7 @@ namespace BugTracker.Entities
         public override string ToString()
         {
             return Nombre;
+            
         }
 
     }

@@ -96,7 +96,8 @@ namespace BugTracker.DataAccessLayer
                 {
                     Id_actividad = Convert.ToInt32(row["id_actividad"].ToString()),
                     Nombre = row["Nombre_actividad"].ToString(),
-                    Descripcion = row["Descripcion_actividad"].ToString()
+                    Descripcion = row["Descripcion_actividad"].ToString(),
+                    Borrado = Convert.ToBoolean(row["borrado"].ToString())
                 },
              
                 Finalizado = Convert.ToBoolean(row["finalizado"].ToString()),

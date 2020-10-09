@@ -20,7 +20,6 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
         private UsuarioCursoAvance oUsuarioCursoAvance;
         public int idCurso;
         public int idUsuario;
-        public static Actividad ;
         private UsuarioCursoAvance oUsuarioCursoAvanceSelected;
        
        
@@ -62,10 +61,9 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             // Definimos el nombre de la columnas y el DataPropertyName que se asocia a DataSource
             dgvUsuarioCursoAvance.Columns[0].Name = "Actividades";
             dgvUsuarioCursoAvance.Columns[0].DataPropertyName = "Actividad";
-            // Definimos el ancho de la columna.
-
-            dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
-            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion";
+            // Definimos el ancho de la columna.;
+            dgvUsuarioCursoAvance.Columns[1].Name = "Borrado";
+            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "borrado";
 
             dgvUsuarioCursoAvance.Columns[2].Name = "Finalizado";
             dgvUsuarioCursoAvance.Columns[2].DataPropertyName = "Finalizado";
