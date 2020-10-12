@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbrPorcentaje = new System.Windows.Forms.ProgressBar();
             this.dgvUsuarioCursoAvance = new System.Windows.Forms.DataGridView();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.UsuarioCurso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarioCursoAvance)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +97,7 @@
             // pbrPorcentaje
             // 
             this.pbrPorcentaje.Location = new System.Drawing.Point(4, 250);
-            this.pbrPorcentaje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbrPorcentaje.Margin = new System.Windows.Forms.Padding(2);
             this.pbrPorcentaje.Name = "pbrPorcentaje";
             this.pbrPorcentaje.Size = new System.Drawing.Size(338, 32);
             this.pbrPorcentaje.TabIndex = 9;
@@ -116,15 +117,26 @@
             this.dgvUsuarioCursoAvance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarioCursoAvance_CellContentClick);
             this.dgvUsuarioCursoAvance.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvUsuarioCursoAvance_CellFormatting_1);
             // 
+            // btnReporte
+            // 
+            this.btnReporte.Location = new System.Drawing.Point(78, 309);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(64, 40);
+            this.btnReporte.TabIndex = 19;
+            this.btnReporte.Text = "Generar Reporte";
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // frmUsuarioCursoAvance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(361, 354);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.UsuarioCurso);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUsuarioCursoAvance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Avance del Curso";
@@ -145,5 +157,6 @@
         private System.Windows.Forms.ProgressBar pbrPorcentaje;
         private System.Windows.Forms.DataGridView dgvUsuarioCursoAvance;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

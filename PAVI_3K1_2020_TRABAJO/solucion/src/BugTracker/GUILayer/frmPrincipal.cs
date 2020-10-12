@@ -4,6 +4,7 @@ using BugTracker.GUILayer.Objetivos;
 using BugTracker.GUILayer.Categorias;
 using BugTracker.GUILayer.Actividades;
 using BugTracker.GUILayer.Usuarios_Curso;
+using BugTracker.GUILayer.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -100,6 +101,23 @@ namespace BugTracker.GUILayer
         {
             frmObjetivos frmDetalle = new frmObjetivos();
             frmDetalle.ShowDialog();
+        }
+
+        private void listaDeCursosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoCursos listado = new ListadoCursos();
+            listado.ShowDialog();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoUsuarios listado = new ListadoUsuarios();
+            listado.ShowDialog();
         }
     }
     

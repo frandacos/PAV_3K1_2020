@@ -1,4 +1,5 @@
 ﻿using BugTracker.BusinessLayer;
+using BugTracker.GUILayer.Reportes;
 using BugTracker.Entities;
 using System;
 using System.Collections.Generic;
@@ -62,8 +63,8 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             dgvUsuarioCursoAvance.Columns[0].Name = "Actividades";
             dgvUsuarioCursoAvance.Columns[0].DataPropertyName = "Actividad";
             // Definimos el ancho de la columna.;
-            dgvUsuarioCursoAvance.Columns[1].Name = "Borrado";
-            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "borrado";
+            dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
+            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion";
 
             dgvUsuarioCursoAvance.Columns[2].Name = "Finalizado";
             dgvUsuarioCursoAvance.Columns[2].DataPropertyName = "Finalizado";
@@ -198,6 +199,14 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
                     e.FormattingApplied = true;
                 }
             }
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            AvanceCursoUsuario avance = new AvanceCursoUsuario(idCurso,idUsuario);
+            avance.ShowDialog();
+            
+
         }
     }
 }
