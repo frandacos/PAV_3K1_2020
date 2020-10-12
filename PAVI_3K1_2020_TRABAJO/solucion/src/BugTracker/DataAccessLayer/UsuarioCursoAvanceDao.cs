@@ -99,7 +99,6 @@ namespace BugTracker.DataAccessLayer
                     Descripcion = row["Descripcion_actividad"].ToString(),
                     Borrado = Convert.ToBoolean(row["borrado"].ToString())
                 },
-             
                 Finalizado = Convert.ToBoolean(row["finalizado"].ToString()),
                 Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };

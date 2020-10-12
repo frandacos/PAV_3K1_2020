@@ -37,10 +37,12 @@
             this.cboUsuario = new System.Windows.Forms.ComboBox();
             this.cboCurso = new System.Windows.Forms.ComboBox();
             this.UsuarioCurso = new System.Windows.Forms.GroupBox();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnQuitar = new System.Windows.Forms.Button();
+            this.btnReporteUsuarioCurso = new System.Windows.Forms.Button();
+            this.btnReporteCursosPorUsuario = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnQuitar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarioCurso)).BeginInit();
             this.UsuarioCurso.SuspendLayout();
             this.SuspendLayout();
@@ -145,40 +147,25 @@
             this.UsuarioCurso.Text = "Buscar Usuario en Curso";
             this.UsuarioCurso.Enter += new System.EventHandler(this.UsuarioCurso_Enter);
             // 
-            // btnNuevo
+            // btnReporteUsuarioCurso
             // 
-            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
-            this.btnNuevo.Location = new System.Drawing.Point(15, 336);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(6);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
-            this.btnNuevo.TabIndex = 10;
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnReporteUsuarioCurso.Location = new System.Drawing.Point(193, 333);
+            this.btnReporteUsuarioCurso.Name = "btnReporteUsuarioCurso";
+            this.btnReporteUsuarioCurso.Size = new System.Drawing.Size(76, 48);
+            this.btnReporteUsuarioCurso.TabIndex = 14;
+            this.btnReporteUsuarioCurso.Text = "Reporte Usuarios en Curso";
+            this.btnReporteUsuarioCurso.UseVisualStyleBackColor = true;
+            this.btnReporteUsuarioCurso.Click += new System.EventHandler(this.btnReporteUsuarioCurso_Click);
             // 
-            // btnEditar
+            // btnReporteCursosPorUsuario
             // 
-            this.btnEditar.Enabled = false;
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(67, 336);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(40, 40);
-            this.btnEditar.TabIndex = 11;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnQuitar
-            // 
-            this.btnQuitar.Enabled = false;
-            this.btnQuitar.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.Image")));
-            this.btnQuitar.Location = new System.Drawing.Point(119, 336);
-            this.btnQuitar.Margin = new System.Windows.Forms.Padding(6);
-            this.btnQuitar.Name = "btnQuitar";
-            this.btnQuitar.Size = new System.Drawing.Size(40, 40);
-            this.btnQuitar.TabIndex = 12;
-            this.btnQuitar.UseVisualStyleBackColor = true;
-            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            this.btnReporteCursosPorUsuario.Location = new System.Drawing.Point(284, 333);
+            this.btnReporteCursosPorUsuario.Name = "btnReporteCursosPorUsuario";
+            this.btnReporteCursosPorUsuario.Size = new System.Drawing.Size(76, 48);
+            this.btnReporteCursosPorUsuario.TabIndex = 15;
+            this.btnReporteCursosPorUsuario.Text = "Reporte Cursos por usuario";
+            this.btnReporteCursosPorUsuario.UseVisualStyleBackColor = true;
+            this.btnReporteCursosPorUsuario.Click += new System.EventHandler(this.btnReporteCursosPorUsuario_Click);
             // 
             // btnSalir
             // 
@@ -192,11 +179,48 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnQuitar
+            // 
+            this.btnQuitar.Enabled = false;
+            this.btnQuitar.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.Image")));
+            this.btnQuitar.Location = new System.Drawing.Point(119, 336);
+            this.btnQuitar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnQuitar.Name = "btnQuitar";
+            this.btnQuitar.Size = new System.Drawing.Size(40, 40);
+            this.btnQuitar.TabIndex = 12;
+            this.btnQuitar.UseVisualStyleBackColor = true;
+            this.btnQuitar.Click += new System.EventHandler(this.btnQuitar_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
+            this.btnEditar.Location = new System.Drawing.Point(67, 336);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(6);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(40, 40);
+            this.btnEditar.TabIndex = 11;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
+            this.btnNuevo.Location = new System.Drawing.Point(15, 336);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(6);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(40, 40);
+            this.btnNuevo.TabIndex = 10;
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
             // frmUsuarioCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 383);
+            this.Controls.Add(this.btnReporteCursosPorUsuario);
+            this.Controls.Add(this.btnReporteUsuarioCurso);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnQuitar);
             this.Controls.Add(this.btnEditar);
@@ -229,5 +253,7 @@
         internal System.Windows.Forms.Button btnEditar;
         internal System.Windows.Forms.Button btnQuitar;
         internal System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnReporteUsuarioCurso;
+        private System.Windows.Forms.Button btnReporteCursosPorUsuario;
     }
 }

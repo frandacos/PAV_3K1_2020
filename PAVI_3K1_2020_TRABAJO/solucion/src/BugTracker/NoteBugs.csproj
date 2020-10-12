@@ -206,6 +206,18 @@
     <Compile Include="GUILayer\Reportes\ListadoUsuarios.Designer.cs">
       <DependentUpon>ListadoUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteCursosPorUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteCursosPorUsuario.Designer.cs">
+      <DependentUpon>ReporteCursosPorUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteUsuariosEnCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\Reportes\ReporteUsuariosEnCurso.Designer.cs">
+      <DependentUpon>ReporteUsuariosEnCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\Usuario_Curso_Avance\frmUsuarioCursoAvance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +297,12 @@
     <EmbeddedResource Include="GUILayer\Reportes\ListadoUsuarios.resx">
       <DependentUpon>ListadoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteCursosPorUsuario.resx">
+      <DependentUpon>ReporteCursosPorUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\Reportes\ReporteUsuariosEnCurso.resx">
+      <DependentUpon>ReporteUsuariosEnCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\Usuario_Curso_Avance\frmUsuarioCursoAvance.resx">
       <DependentUpon>frmUsuarioCursoAvance.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +330,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReporteCursosPorUsuario.rdlc" />
+    <EmbeddedResource Include="UsuariosEnCurso.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

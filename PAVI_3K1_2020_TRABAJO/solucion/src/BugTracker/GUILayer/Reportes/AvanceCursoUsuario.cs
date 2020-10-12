@@ -14,6 +14,7 @@ namespace BugTracker.GUILayer.Reportes
     {
         public int idCurso;
         public int idUsuario;
+        public int total2;
         public AvanceCursoUsuario(int idCurso,int idUsuario)
         {
             InitializeComponent();

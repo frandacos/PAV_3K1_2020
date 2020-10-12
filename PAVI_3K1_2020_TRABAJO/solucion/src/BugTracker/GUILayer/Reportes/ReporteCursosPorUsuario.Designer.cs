@@ -1,6 +1,6 @@
 ﻿namespace BugTracker.GUILayer.Reportes
 {
-    partial class AvanceCursoUsuario
+    partial class ReporteCursosPorUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -30,54 +30,51 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.avanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new BugTracker.DataSet1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.avanceTableAdapter = new BugTracker.DataSet1TableAdapters.AvanceTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.avanceBindingSource)).BeginInit();
+            this.dataSet1 = new BugTracker.DataSet1();
+            this.cursosPorUsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cursosPorUsuarioTableAdapter = new BugTracker.DataSet1TableAdapters.CursosPorUsuarioTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursosPorUsuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // avanceBindingSource
+            // reportViewer1
             // 
-            this.avanceBindingSource.DataMember = "Avance";
-            this.avanceBindingSource.DataSource = this.dataSet1;
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.cursosPorUsuarioBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "BugTracker.ReporteCursosPorUsuario.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(477, 330);
+            this.reportViewer1.TabIndex = 0;
             // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
             this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // reportViewer1
+            // cursosPorUsuarioBindingSource
             // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.avanceBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "BugTracker.Avance.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(656, 450);
-            this.reportViewer1.TabIndex = 0;
-            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
+            this.cursosPorUsuarioBindingSource.DataMember = "CursosPorUsuario";
+            this.cursosPorUsuarioBindingSource.DataSource = this.dataSet1;
             // 
-            // avanceTableAdapter
+            // cursosPorUsuarioTableAdapter
             // 
-            this.avanceTableAdapter.ClearBeforeFill = true;
+            this.cursosPorUsuarioTableAdapter.ClearBeforeFill = true;
             // 
-            // AvanceCursoUsuario
+            // ReporteCursosPorUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 450);
+            this.ClientSize = new System.Drawing.Size(477, 331);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "AvanceCursoUsuario";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte de Avance Usuario";
-            this.Load += new System.EventHandler(this.AvanceCursoUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.avanceBindingSource)).EndInit();
+            this.Name = "ReporteCursosPorUsuario";
+            this.Text = "ReporteCursosPorUsuario";
+            this.Load += new System.EventHandler(this.ReporteCursosPorUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cursosPorUsuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,8 +82,8 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource avanceBindingSource;
+        private System.Windows.Forms.BindingSource cursosPorUsuarioBindingSource;
         private DataSet1 dataSet1;
-        private DataSet1TableAdapters.AvanceTableAdapter avanceTableAdapter;
+        private DataSet1TableAdapters.CursosPorUsuarioTableAdapter cursosPorUsuarioTableAdapter;
     }
 }

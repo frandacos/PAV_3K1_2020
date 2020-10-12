@@ -64,7 +64,7 @@ namespace BugTracker.GUILayer.Usuario_Curso_Avance
             dgvUsuarioCursoAvance.Columns[0].DataPropertyName = "Actividad";
             // Definimos el ancho de la columna.;
             dgvUsuarioCursoAvance.Columns[1].Name = "Descripcion";
-            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "Descripcion";
+            dgvUsuarioCursoAvance.Columns[1].DataPropertyName = "descripcion";
 
             dgvUsuarioCursoAvance.Columns[2].Name = "Finalizado";
             dgvUsuarioCursoAvance.Columns[2].DataPropertyName = "Finalizado";

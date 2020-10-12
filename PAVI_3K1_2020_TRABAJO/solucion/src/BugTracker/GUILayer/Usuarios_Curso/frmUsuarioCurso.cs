@@ -1,5 +1,6 @@
 ﻿using BugTracker.BusinessLayer;
 using BugTracker.Entities;
+using BugTracker.GUILayer.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,6 +35,8 @@ namespace BugTracker.GUILayer.Usuarios_Curso
             habilitar(true);
             LlenarCombo(cboCurso, oCursoService.ObtenerTodos(), "nombre", "id_curso");
             LlenarCombo(cboUsuario, oUsuarioService.ObtenerTodos(), "nombreUsuario", "idUsuario");
+            btnReporteUsuarioCurso.Enabled = false;
+            btnReporteCursosPorUsuario.Enabled = false;
         }
 
         private void habilitar(bool x)
@@ -112,6 +115,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                     // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
                     filters.Add("UC.id_curso", cboCurso.SelectedValue);
                     condiciones += " AND UC.id_curso=" + cboCurso.SelectedValue.ToString();
+                    btnReporteUsuarioCurso.Enabled = true;
 
                 }
 
@@ -120,6 +124,7 @@ namespace BugTracker.GUILayer.Usuarios_Curso
                     // Si el cbo tiene un texto no vacìo entonces recuperamos el valor de la propiedad ValueMember
                     filters.Add("UC.id_usuario", cboCurso.SelectedValue);
                     condiciones += " AND UC.id_usuario=" + cboUsuario.SelectedValue.ToString();
+                    btnReporteCursosPorUsuario.Enabled = true;
 
                 }
 
@@ -142,6 +147,8 @@ namespace BugTracker.GUILayer.Usuarios_Curso
             else
                 //selecciono el checkbox(todos)
                 dgvUsuarioCurso.DataSource = oUsuariosCursoService.ObtenerTodos();
+                cboCurso.SelectedIndex = -1;
+                cboUsuario.SelectedIndex = -1;
         }
 
 
@@ -206,6 +213,19 @@ namespace BugTracker.GUILayer.Usuarios_Curso
         private void dgvUsuarioCurso_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnReporteUsuarioCurso_Click(object sender, EventArgs e)
+        { 
+
+            ReporteUsuariosEnCurso formulario = new ReporteUsuariosEnCurso((int)cboCurso.SelectedValue);
+            formulario.ShowDialog();
+        }
+
+        private void btnReporteCursosPorUsuario_Click(object sender, EventArgs e)
+        {
+            ReporteCursosPorUsuario formulario = new ReporteCursosPorUsuario((int)cboUsuario.SelectedValue);
+            formulario.ShowDialog();
         }
     }
 }
